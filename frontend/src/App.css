@@ -5,6 +5,165 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Clash Display";
+  src: url("./fonts/ClashDisplayVariable.ttf") format("truetype");
+}
+
 body {
-  font-family: "Bricolage Grotesque", sans-serif;
+  font-family: "Clash Display", sans-serif;
+}
+
+.background-primary-light {
+  background-color: var(--body-light-1);
+}
+
+.background-primary-dark {
+  background-color: var(--body-dark);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+:root {
+  --body-light: #f5f7ff;
+  --body-light-1: #f2f5f2;
+  --body-dark: #000;
+  --body-dark2: #222921;
+  --text-primary: 0 0 0;
+  --text-secondary: 102 55 238;
+  --text-primary-dark: 255 255 255;
+  --text-secondary-dark: 206 255 26;
+  --text-accent-dark: 102 55 238;
+  --text-tertiary: 111 244 196;
+  --text-quaternary: 253 96 53;
+  --text-quinary: 231 166 213;
+  --text-copyright: 108 108 108;
+  --color-high-contrast: 0 0 0;
+  --stroke-color: #000;
+}
+
+.light {
+  --color-primaryBg: var(--body-light-1);
+  --color-textPrimary: var(--text-primary);
+  --color-textSecondary: var(--text-secondary);
+  --color-textQuaternary: var(--text-quaternary);
+  --color-textAccent: var(--text-accent-dark);
+  --color-textQuinary: var(--text-primary-dark);
+  --color-textSenary: var(--text-secondary-dark);
+  --color-textAccent2: var(--text-quinary);
+  --color-textMiddlePurple: #6637ee;
+  --text-figcaption: #6b7280;
+  --color-rect: #ceff1a;
+  --color-card: #daf464;
+  --color-card-alpha: #6637ee;
+  --color-card-chi: #fcfdff;
+  --color-card-delta: #ceff1a;
+  --color-card-epsilon: #4adbc8;
+  --color-card-gamma: #1c221b;
+  --color-card-omicron: #daf464;
+  --color-floating-bar-bg: #daf464;
+  --color-athens-gray: #f3f3f5;
+  --color-contact-alpha: #f5f7ff;
+  --color-contact-beta: #fff;
+  --color-contact-chi: #ceff1a;
+  --color-ellipse-alpha: #fb6612;
+  --color-ellipse-beta: #8455ff;
+  --color-ellipse-chi: #000;
+  --color-ellipse-delta: #cdf02d;
+  --color-circle: #4adbc8;
+  --color-focus: #000;
+  --color-table-header: #ceff1a;
+  --color-header: #c4adff;
+  --color-blue: #bcebff;
+  --color-peach: #f3bca4;
+  --color-yellow: #efff36;
+  --color-dark-green: #30392d;
+  --color-cabbage-pont: #44513f;
+  --color-pink-alpha: #e7a6d5;
+  --color-pink-beta: #dacef5;
+  --color-turquoise: #c1f4e8;
+  --color-testimonials-header: #ffcbfa;
+  --color-paid-program-header: #d0ddff;
+  --color-send-to-us-header: #d6fffd;
+  --color-header-bg: #fff;
+  --color-light-pink: #ffdffa;
+  --color-gray-blue: #545867;
+  --color-table-header-inactive: #6c6c6c;
+  --color-bg-card-light: #fcfdff;
+  --color-light-gray: #c8c8c8;
+  --color-french-pass: #bef;
+  --product-design-primary: #e2d6ff;
+  --product-design-cta: #abf9ff;
+  --product-design-title: 28 34 27;
+  --product-design-text: #6c6c6c;
+  --product-design-card: #000;
+  --product-design-contact: #e2d6ff;
+  --product-design-text-secondary: #787878;
+  --product-design-text-tertiary: #323232;
+  --ui-design-primary: #baedff;
+  --ui-design-secondary: #f4f4f4;
+  --ui-design-logo: #79e6f5;
+  --ui-design-text: #6c6c6c;
+  --ui-why-dodo-title: #000;
+  --ui-design-text-contrast: #606060;
+  --website-design-primary: #ff9d9d;
+  --website-design-y-dodo-mobile: #f4f4f4;
+  --ui-design-fill-invert: #79e6f5;
+  --ui-design-fill-second-invert: #b3faff;
+  --ui-design-fill-third-invert: #8ff1f9;
+  --ux-design-primary: #ffbae8;
+  --ux-design-secondary: #f4f4f4;
+  --ux-design-tertiary: #f4f4f4;
+  --ux-design-logo: #79e6f5;
+  --ux-design-text-contrast: #000;
+  --ux-design-title: #1c221b;
+  --ux-design-title-secondary: #000;
+  --ux-design-text: #30392d;
+  --ux-design-svg: #ffe6db;
+  --ux-design-why-dodonut-invert: #000;
+  --process-section-tab: #6c6c6c;
+  --scoping-sessions-primary: #ffd966;
+  --scoping-sessions-text: #1c221b;
+  --scoping-sessions-nav: #fff;
+  --color-table-row-bg: #f7f9f7;
+  --branding-primary: #dbdfe8;
+  --branding-stroke-fill: #fff;
+  --branding-ticker-bg: #1c221b;
+  --branding-testimonials-text: #30392d;
+  --branding-benefits-text: #545867;
+  --no-code-primary: #def25c;
+  --no-code-card: #f2f5f2;
+  --no-code-info-ticker: #1c221b;
+  --no-code-ticker-accent: #fff;
+  --no-code-ticker-text: #fff;
+  --no-code-text: #000;
+  --illustration-primary: #f4f4f4;
+  --illustration-testimonials: #f2f5f2;
+  --illustration-ticker: #1c221b;
+  --illustration-testimonials-fill: #fff;
+  --category-section-primary: #000;
+  --category-section-primaryBg: var(--body-light-1);
+  --category-section-subLink: #6637ee;
+  --category-underline: #000;
+  --custom-dev-primary: #c89dff;
+  --custom-dev-text: #1c221b;
+  --custom-dev-text-secondary: #6c6c6c;
+  --custom-dev-green: #ceff1a;
+  --custom-dev-ticker-bg: #1c221b;
+  --custom-dev-ticker-text: #fff;
+  --custom-dev-grey: #545867;
+  --article-featured-card: #fff;
+  --article-hero-bg: #c1cdf4;
+  --custom-dev-grey-light: #ccc;
+  --custom-dev-bg-1: #f2f5f2;
+  --custom-dev-purple: #6637ee;
+  --stroke-gray: #9fa1ac;
+  --text-disabled: #6c6e79;
+  --footer-card-bg: #fff;
+  --footer-accent: #ceff1a;
+  --footer-accent-inverted: #6637ee;
+  --footer-input-bg: #f3f3f5;
+  --footer-text: #1b1b1e;
 }
