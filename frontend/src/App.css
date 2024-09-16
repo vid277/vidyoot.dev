@@ -1,0 +1,403 @@
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("./fonts/BricolageGrotesque.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(20 21 32);
+}
+
+.border-danger-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(243 172 158);
+}
+
+.border-danger-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(225 106 82);
+}
+
+.border-green-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(130 181 191);
+}
+
+.border-info-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(166 195 234);
+}
+
+.border-info-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(93 133 212);
+}
+
+.border-lila-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(200 190 253);
+}
+
+.border-lila-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(180 166 252);
+}
+
+.border-red-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(238 170 183);
+}
+
+.border-success-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(126 202 193);
+}
+
+.border-success-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(58 146 141);
+}
+
+.border-transparent {
+  border-color: transparent;
+}
+
+.border-warning-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(242 171 126);
+}
+
+.border-warning-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(231 95 40);
+}
+
+.border-white\/10 {
+  border-color: #f5f5f51a;
+}
+
+.border-white\/5 {
+  border-color: #f5f5f50d;
+}
+
+.bg-black {
+  background-color: rgb(20 21 32);
+}
+
+.bg-danger-100 {
+  background-color: rgb(252 232 228);
+}
+
+.bg-danger-200 {
+  background-color: rgb(250 213 206);
+}
+
+.bg-danger-300 {
+  background-color: rgb(243 172 158);
+}
+
+.bg-danger-400 {
+  background-color: rgb(237 143 124);
+}
+
+.bg-danger-50 {
+  background-color: rgb(253 245 243);
+}
+
+.bg-danger-500 {
+  background-color: rgb(225 106 82);
+}
+
+.bg-danger-600 {
+  background-color: rgb(205 78 53);
+}
+
+.bg-danger-700 {
+  background-color: rgb(172 63 41);
+}
+
+.bg-danger-800 {
+  background-color: rgb(143 54 37);
+}
+
+.bg-danger-900 {
+  background-color: rgb(119 51 37);
+}
+
+.bg-danger-950 {
+  background-color: rgb(64 23 15);
+}
+
+.bg-green-100 {
+  background-color: rgb(242 247 248);
+}
+
+.bg-green-200 {
+  background-color: rgb(225 237 239);
+}
+
+.bg-green-300 {
+  background-color: rgb(211 229 232);
+}
+
+.bg-green-400 {
+  background-color: rgb(198 221 226);
+}
+
+.bg-green-50 {
+  background-color: rgb(248 251 252);
+}
+
+.bg-green-500 {
+  background-color: rgb(183 212 218);
+}
+
+.bg-green-600 {
+  background-color: rgb(130 181 191);
+}
+
+.bg-green-700 {
+  background-color: rgb(81 145 158);
+}
+
+.bg-green-800 {
+  background-color: rgb(54 96 104);
+}
+
+.bg-green-900 {
+  background-color: rgb(28 50 54);
+}
+
+.bg-info-200 {
+  background-color: rgb(202 218 243);
+}
+
+.bg-info-300 {
+  background-color: rgb(166 195 234);
+}
+
+.bg-lila-100 {
+  background-color: rgb(247 245 255);
+}
+
+.bg-lila-200 {
+  background-color: rgb(234 230 254);
+}
+
+.bg-lila-300 {
+  background-color: rgb(226 220 254);
+}
+
+.bg-lila-400 {
+  background-color: rgb(214 206 253);
+}
+
+.bg-lila-50 {
+  background-color: rgb(251 250 255);
+}
+
+.bg-lila-500 {
+  background-color: rgb(200 190 253);
+}
+
+.bg-lila-600 {
+  background-color: rgb(180 166 252);
+}
+
+.bg-lila-700 {
+  background-color: rgb(160 141 251);
+}
+
+.bg-lila-800 {
+  background-color: rgb(131 107 250);
+}
+
+.bg-lila-900 {
+  background-color: rgb(85 52 249);
+}
+
+.bg-red-100 {
+  background-color: rgb(253 247 248);
+}
+
+.bg-red-200 {
+  background-color: rgb(251 234 237);
+}
+
+.bg-red-300 {
+  background-color: rgb(248 221 226);
+}
+
+.bg-red-400 {
+  background-color: rgb(246 208 215);
+}
+
+.bg-red-50 {
+  background-color: rgb(254 251 251);
+}
+
+.bg-red-500 {
+  background-color: rgb(243 196 205);
+}
+
+.bg-red-600 {
+  background-color: rgb(238 170 183);
+}
+
+.bg-red-700 {
+  background-color: rgb(232 141 157);
+}
+
+.bg-red-800 {
+  background-color: rgb(222 94 117);
+}
+
+.bg-red-900 {
+  background-color: rgb(191 39 67);
+}
+
+.bg-success-100 {
+  background-color: rgb(215 240 236);
+}
+
+.bg-success-200 {
+  background-color: rgb(191 231 225);
+}
+
+.bg-success-300 {
+  background-color: rgb(126 202 193);
+}
+
+.bg-success-400 {
+  background-color: rgb(83 174 166);
+}
+
+.bg-success-50 {
+  background-color: rgb(243 250 248);
+}
+
+.bg-success-500 {
+  background-color: rgb(58 146 141);
+}
+
+.bg-success-600 {
+  background-color: rgb(44 117 114);
+}
+
+.bg-success-700 {
+  background-color: rgb(39 94 92);
+}
+
+.bg-success-800 {
+  background-color: rgb(35 76 76);
+}
+
+.bg-success-900 {
+  background-color: rgb(32 65 63);
+}
+
+.bg-success-950 {
+  background-color: rgb(14 36 37);
+}
+
+.bg-violet-300 {
+  background-color: rgb(196 181 253);
+}
+
+.bg-warning-100 {
+  background-color: rgb(252 233 216);
+}
+
+.bg-warning-200 {
+  background-color: rgb(247 206 177);
+}
+
+.bg-warning-300 {
+  background-color: rgb(242 171 126);
+}
+
+.bg-warning-400 {
+  background-color: rgb(236 128 75);
+}
+
+.bg-warning-50 {
+  background-color: rgb(254 245 238);
+}
+
+.bg-warning-500 {
+  background-color: rgb(231 95 40);
+}
+
+.bg-warning-600 {
+  background-color: rgb(216 71 30);
+}
+
+.bg-warning-700 {
+  background-color: rgb(180 52 26);
+}
+
+.bg-warning-800 {
+  background-color: rgb(143 43 29);
+}
+
+.bg-warning-900 {
+  background-color: rgb(116 38 26);
+}
+
+.bg-warning-950 {
+  background-color: rgb(62 17 12);
+}
+
+.bg-white {
+  background-color: rgb(245 245 245);
+}
+
+.bg-white\/10 {
+  background-color: #f5f5f51a;
+}
+
+.bg-yellow-100 {
+  background-color: rgb(255 250 245);
+}
+
+.bg-yellow-200 {
+  background-color: rgb(255 245 235);
+}
+
+.bg-yellow-300 {
+  background-color: rgb(254 238 220);
+}
+
+.bg-yellow-400 {
+  background-color: rgb(254 233 210);
+}
+
+.bg-yellow-50 {
+  background-color: rgb(255 253 250);
+}
+
+.bg-yellow-500 {
+  background-color: rgb(254 227 198);
+}
+
+.bg-yellow-600 {
+  background-color: rgb(253 201 145);
+}
+
+.bg-yellow-700 {
+  background-color: rgb(252 164 70);
+}
+
+.bg-yellow-800 {
+  background-color: rgb(236 124 4);
+}
+
+.bg-yellow-900 {
+  background-color: rgb(170 89 3);
+}
