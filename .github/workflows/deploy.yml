@@ -1,4 +1,4 @@
-            - name: Netlify Actions
+- name: Netlify Actions
   # You may pin to the exact commit or the version.
   # uses: nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654
   uses: nwtgck/actions-netlify@v3.0.0
