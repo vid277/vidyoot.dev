@@ -3,7 +3,7 @@ import { FlipWords } from "./ui/flip-words";
 
 export function FlipPositions() {
   const words = [
-    "Frontend Developer.",
+    "Frontend Engineer.",
     "CS Student.",
     "Software Engineer.",
     "Game Developer.",
