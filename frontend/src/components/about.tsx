@@ -8,7 +8,10 @@ import { Badge, badgeVariants } from "@/components/ui/badge";
 
 export function About() {
   return (
-    <div className="h-min w-full dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center">
+    <div
+      className="h-min w-full dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center"
+      id="about"
+      >
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <div className="h-max relative w-full p-16 px-36 pb-28 flex flex-col justify-start items-start gap-2 ">
         <div className="flex flex-row justify-center items-start w-full mt-1">

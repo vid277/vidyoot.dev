@@ -5,6 +5,7 @@ import { StarsBackground } from "@/components/ui/stars-background";
 import { FlipPositions } from "./cover-flip-positions";
 import { ToolDock } from "./cover-dock";
 import { ArrowDown } from "lucide-react";
+import Link from "next/link";
 
 export function Cover() {
   return (
@@ -14,7 +15,12 @@ export function Cover() {
         <FlipPositions />
         <ToolDock />
         <span className="text-white hover:bg-white rounded-full p-1 hover:text-black transition-all duration-500">
-          <ArrowDown size={32} strokeWidth={1.5} />
+          <Link
+            href="#about"
+            className="cursor-pointer transition duration-500"
+          >
+            <ArrowDown size={32} strokeWidth={1.5} />
+          </Link>
         </span>
       </h2>
       <ShootingStars />
