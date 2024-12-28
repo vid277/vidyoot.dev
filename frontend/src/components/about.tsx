@@ -19,7 +19,7 @@ export function About() {
             <BoxReveal boxColor={"#5046e6"} duration={0.5}>
               <h1 className="text-6xl font-oddolini">About me.</h1>
             </BoxReveal>
-            <div className="flex flex-col gap-7">
+            <div className="flex flex-col gap-8">
               <div className="w-5/6">
                 <h2 className="text-xl font-hanken">
                   Hi! I'm Vidyoot Senthil, a software engineer based in Atlanta,
