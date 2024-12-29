@@ -9,17 +9,17 @@ import { Badge } from "@/components/ui/badge";
 export function About() {
   return (
     <div
-      className="h-min w-full dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center py-16"
+      className="w-full dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center py-16"
       id="about"
     >
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-      <div className="h-max relative w-full p-20 px-36 pb-28 flex flex-col justify-start items-start gap-2">
+      <div className="h-max relative w-full p-20 px-36 pb-20 flex flex-col justify-start items-start gap-2">
         <div className="flex flex-row justify-center items-start w-full mt-1">
           <div className="flex flex-col gap-2 flex-1">
             <BoxReveal boxColor={"#5046e6"} duration={0.5}>
               <h1 className="text-6xl font-oddolini">About me.</h1>
             </BoxReveal>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-10">
               <div className="w-5/6">
                 <h2 className="text-xl font-hanken">
                   Hi! I'm Vidyoot Senthil, a software engineer based in Atlanta,
@@ -64,6 +64,15 @@ export function About() {
                   </Badge>
                   <Badge variant="outline" className="text-base font-hanken">
                     Scrolling Hacker News
+                  </Badge>
+                  <Badge variant="outline" className="text-base font-hanken">
+                    Exploring Music
+                  </Badge>
+                  <Badge variant="outline" className="text-base font-hanken">
+                    Binging Bollywood Movies
+                  </Badge>
+                  <Badge variant="outline" className="text-base font-hanken">
+                    Trying New Restaurants
                   </Badge>
                 </div>
               </div>
