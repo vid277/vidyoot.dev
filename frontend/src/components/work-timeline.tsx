@@ -3,6 +3,10 @@ import { Timeline } from "./ui/timeline";
 import { Badge } from "./ui/badge";
 import Link from "next/link";
 import InteractiveHoverButton from "./ui/interactive-hover-button";
+import { LinkPreview } from "./ui/link-preview";
+import poster2023 from "./images/poster_2023.png";
+import poster2024 from "./images/poster_2024.png";
+import dynalabDemo from "./images/dynalab_demo.png";
 
 export function WorkTimeline() {
   const data = [
@@ -59,15 +63,27 @@ export function WorkTimeline() {
               </li>
             </ul>
             <div className="flex gap-2">
-              <Link href="https://drive.google.com/file/d/1J4gvl3n81ZEVlHE_jY0kZG8VZlZkqsVR/view?usp=sharing">
+              <LinkPreview
+                url="https://drive.google.com/file/d/1J4gvl3n81ZEVlHE_jY0kZG8VZlZkqsVR/view?usp=sharing"
+                isStatic={true}
+                imageSrc={poster2023.src}
+              >
                 <InteractiveHoverButton text="Poster 2023" />
-              </Link>
-              <Link href="https://drive.google.com/file/d/13Os1CgOGZYeqnZVuiTEhnEm6MUUojMn0/view?usp=sharing">
+              </LinkPreview>
+              <LinkPreview
+                url="https://drive.google.com/file/d/13Os1CgOGZYeqnZVuiTEhnEm6MUUojMn0/view?usp=sharing"
+                isStatic={true}
+                imageSrc={poster2024.src}
+              >
                 <InteractiveHoverButton text="Poster 2024" />
-              </Link>
-              <Link href="https://colab.research.google.com/drive/1klGLUJi527VPdtSVAbr09xXSDIGHp5ND?usp=sharing">
+              </LinkPreview>
+              <LinkPreview
+                url="https://colab.research.google.com/drive/1klGLUJi527VPdtSVAbr09xXSDIGHp5ND?usp=sharing"
+                isStatic={true}
+                imageSrc={dynalabDemo.src}
+              >
                 <InteractiveHoverButton text="Dynalab Demo!" />
-              </Link>
+              </LinkPreview>
             </div>
           </div>
         </div>
@@ -120,7 +136,7 @@ export function WorkTimeline() {
     {
       title: "Summer 2024",
       content: (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 z-20">
           <Badge className="text-sm font-hanken w-max">Internship</Badge>
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-0.5">
@@ -212,12 +228,12 @@ export function WorkTimeline() {
               </li>{" "}
             </ul>
             <div className="flex gap-2">
-              <Link href="https://trieve.ai">
+              <LinkPreview url="https://trieve.ai">
                 <InteractiveHoverButton text="Trieve Website" />
-              </Link>
-              <Link href="https://github.com/devflowinc/trieve">
+              </LinkPreview>
+              <LinkPreview url="https://github.com/devflowinc/trieve">
                 <InteractiveHoverButton text="Repository" />
-              </Link>
+              </LinkPreview>
             </div>
           </div>
         </div>
