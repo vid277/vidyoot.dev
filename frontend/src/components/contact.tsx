@@ -4,7 +4,7 @@ import { ProfileForm } from "./contact-form";
 
 export function Contact() {
   return (
-    <div className="h-min w-full  relative flex flex-col items-start justify-start py-8 p-16 px-36 pb-36 gap-8">
+    <div className="h-min w-full  relative flex flex-col items-start justify-start py-28 p-16 px-36 pb-36 gap-8">
       <BoxReveal boxColor={"#5046e6"} duration={0.5}>
         <SparklesText text="Reach Out!" sparklesCount={5} />
       </BoxReveal>
