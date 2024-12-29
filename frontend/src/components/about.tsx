@@ -15,16 +15,16 @@ export function About() {
             <BoxReveal boxColor={"#5046e6"} duration={0.5}>
               <h1 className="text-6xl font-oddolini">About me.</h1>
             </BoxReveal>
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-10 mt-1">
               <div className="w-5/6">
-                <h2 className="text-xl font-hanken">
+                <h2 className="text-lg font-hanken">
                   Hi! I'm Vidyoot Senthil, a software engineer based in Atlanta,
                   Georgia. I'm currently a student at the{" "}
                   <span className="font-bold">
                     Georgia Institute of Technology
                   </span>{" "}
                   studying Computer Science with a focus on Artificial
-                  Intelligence and System Architecture.
+                  Intelligence and Computer Systems Architecture.
                   <br />
                   <br />
                   I'm a full-stack developer with a focus on React/Next.js and

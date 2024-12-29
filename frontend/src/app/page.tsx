@@ -2,8 +2,7 @@ import { Cover } from "@/components/cover";
 import { About } from "@/components/about";
 import { Work } from "@/components/work";
 import { Contact } from "@/components/contact";
-import DotPattern from "@/components/ui/dot-pattern";
-import { cn } from "@/lib/utils";
+import { FloatingDockHome } from "@/components/floating-dock-home";
 
 export default function Home() {
   return (
@@ -17,8 +16,9 @@ export default function Home() {
         <About />
         <Work />
       </div>
-      <hr></hr>
+      <hr className="w-full h-1 bg-gray-200 dark:bg-gray-800" />
       <Contact />
+      <FloatingDockHome />
     </div>
   );
 }
