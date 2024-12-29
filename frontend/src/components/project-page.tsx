@@ -1,0 +1,93 @@
+"use client";
+import React from "react";
+import BoxReveal from "./ui/box-reveal";
+import { ProjectCard } from "./ui/project-card";
+import { IconBrandGithub, IconGlobe } from "@tabler/icons-react";
+import trieveLibrarian from "./images/trieve_librarian.png";
+import jhmcPortal from "./images/jhmc_portal.png";
+import titran from "./images/titran.png";
+
+export function ProjectPage() {
+  return (
+    <div className="h-max w-full  relative flex flex-col items-start justify-start py-0 p-16 px-36 pb-32 gap-10">
+      <BoxReveal boxColor={"#5046e6"} duration={0.5}>
+        <h1 className="text-6xl font-oddolini">Projects</h1>
+      </BoxReveal>
+      <div className="flex flex-row items-start justify-start gap-10">
+        <ProjectCard
+          title="Trieve Librarian"
+          description="A Chrome extension that can scrape websites, subselect relevant content and text, and search and index new bookmarks regularly allowing for better bookmark search."
+          dates="February 2024 - March 2024"
+          image={trieveLibrarian.src}
+          tags={[
+            "JavaScript",
+            "Chrome Extension",
+            "Semantic Search",
+            "Scraping",
+          ]}
+          links={[
+            {
+              type: "Github",
+              href: "https://github.com/vid277/trieve-librarian",
+              icon: <IconBrandGithub className="size-3" />,
+            },
+          ]}
+        />
+        <ProjectCard
+          title="JHMC Testing and Grading Portal"
+          description="A testing, proctoring, and grading portal using modern web technologies and serving 500+ competitors annually in the online division of the international Junior High School Math Contest."
+          dates="August 2022 - May 2024"
+          image={jhmcPortal.src}
+          tags={[
+            "HTML",
+            "SCSS",
+            "Typescript",
+            "EJS",
+            "Node.js",
+            "Bootstrap",
+            "MathJAX",
+            "Google Cloud",
+            "Airtable",
+            "Markdown",
+          ]}
+          links={[
+            {
+              type: "Github",
+              href: "https://github.com/vid277/JHMC-scripts",
+              icon: <IconBrandGithub className="size-3" />,
+            },
+            {
+              type: "Website",
+              href: "https://imsajhmc.com/",
+              icon: <IconGlobe className="size-3" />,
+            },
+          ]}
+        />
+
+        <ProjectCard
+          title="Titran"
+          description="An esoteric programming language mimicking club announcements at my high school (IMSA) with a custom interpreter and compiler both using Python."
+          dates="June 2023 - July 2023"
+          image={titran.src}
+          tags={["Python", "Esolang", "Interpreter", "Compiler"]}
+          links={[
+            {
+              type: "Github",
+              href: "https://github.com/vid277/titran",
+              icon: <IconBrandGithub className="size-3" />,
+            },
+          ]}
+        />
+
+        {/* 
+         - Titran
+         - This portfolio
+         - Dynalab
+         - Embargo
+         - Easy Upside
+         - Facebook Clone
+        */}
+      </div>
+    </div>
+  );
+}

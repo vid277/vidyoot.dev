@@ -6,7 +6,6 @@ import {
   IconBrandGithub,
   IconExchange,
   IconHome,
-  IconNewSection,
   IconArticle,
   IconTerminal2,
 } from "@tabler/icons-react";
@@ -18,7 +17,7 @@ export function FloatingDockHome() {
       icon: (
         <IconHome className="h-full w-full text-neutral-800 dark:text-neutral-200" />
       ),
-      href: "#",
+      href: "/",
     },
 
     {
@@ -26,7 +25,7 @@ export function FloatingDockHome() {
       icon: (
         <IconTerminal2 className="h-full w-full text-neutral-800 dark:text-neutral-200" />
       ),
-      href: "#",
+      href: "/project",
     },
     {
       title: "Blog",

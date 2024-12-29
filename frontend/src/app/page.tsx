@@ -3,6 +3,7 @@ import { About } from "@/components/about";
 import { Work } from "@/components/work";
 import { Contact } from "@/components/contact";
 import { FloatingDockHome } from "@/components/floating-dock-home";
+import { ProjectPage } from "@/components/project-page";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"></div>
         <About />
         <Work />
+        <ProjectPage />
       </div>
       <hr className="w-full h-1 bg-gray-200 dark:bg-gray-800" />
       <Contact />
