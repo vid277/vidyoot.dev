@@ -11,6 +11,156 @@ import dynalabDemo from "./images/dynalab_demo.png";
 export function WorkTimeline() {
   const data = [
     {
+      title: "Current",
+      content: (
+        <div className="flex flex-col gap-4 md:items-start items-center">
+          <Badge className="text-sm font-hanken w-max">Part-time</Badge>
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-0.5">
+              <h3 className="text-xl font-bold font-oddolini">
+                Software Developer
+              </h3>
+              <h3 className="text-base font-bold text-zinc-700 font-hanken">
+                Trieve AI (YC W24)
+              </h3>
+            </div>
+            <ul className="list-disc list-inside">
+              <li
+                className="text-neutral-800 dark:text-neutral-200 text-xs md:text-base font-normal mb-2"
+                style={{
+                  listStylePosition: "inside",
+                  textIndent: "-1.5em",
+                  paddingLeft: "20px",
+                }}
+              >
+                Developing frontend & backend features using TypeScript, Astro,
+                SolidJS, and Rust to help create the world's first Embeddings
+                Management System (EMS) – powering 30k+ documentation websites
+              </li>{" "}
+              <li
+                className="text-neutral-800 dark:text-neutral-200 text-xs md:text-base font-normal mb-2"
+                style={{
+                  listStylePosition: "inside",
+                  textIndent: "-1.5em",
+                  paddingLeft: "20px",
+                }}
+              >
+                Architected, published, and maintained multiple Trieve API
+                clients and SDKs across Python, Typescript, Java, .NET, and Ruby
+                processing several million queries daily.
+              </li>{" "}
+              <li
+                className="text-neutral-800 dark:text-neutral-200 text-xs md:text-base font-normal mb-2"
+                style={{
+                  listStylePosition: "inside",
+                  textIndent: "-1.5em",
+                  paddingLeft: "20px",
+                }}
+              >
+                Spearheaded the development of 35+ new frontend and backend
+                features across the AI Search, RAG, Dashboard, and Demo Pages.
+              </li>{" "}
+            </ul>
+            <div className="flex gap-2 flex-wrap md:justify-start items-center justify-center">
+              <LinkPreview url="https://trieve.ai">
+                <InteractiveHoverButton text="Trieve Website" />
+              </LinkPreview>
+              <LinkPreview url="https://github.com/devflowinc/trieve">
+                <InteractiveHoverButton text="Repository" />
+              </LinkPreview>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Summer 2024",
+      content: (
+        <div className="flex flex-col gap-4 z-20 md:items-start items-center">
+          <Badge className="text-sm font-hanken w-max">Internship</Badge>
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-0.5">
+              <h3 className="text-xl font-bold font-oddolini">
+                Software Engineering Intern
+              </h3>
+              <h3 className="text-base font-bold text-zinc-700 font-hanken">
+                Product Services and Logistics, Caterpillar Inc.
+              </h3>
+            </div>
+            <ul className="list-disc list-inside">
+              <li
+                className="text-neutral-800 dark:text-neutral-200 text-xs md:text-base font-normal mb-2"
+                style={{
+                  listStylePosition: "inside",
+                  textIndent: "-1.5em",
+                  paddingLeft: "20px",
+                }}
+              >
+                Created a vision analytics model utilizing a 3D time of flight
+                (ToF) camera data to optimize space-utilization within shipping
+                crates and containers.
+              </li>{" "}
+              <li
+                className="text-neutral-800 dark:text-neutral-200 text-xs md:text-base font-normal mb-2"
+                style={{
+                  listStylePosition: "inside",
+                  textIndent: "-1.5em",
+                  paddingLeft: "20px",
+                }}
+              >
+                Tackled and resolved 10+ Business Development (BCD) issues
+                utilizing Snowflake, SQL, Snaplogic, SAP, and ServiceNow.
+              </li>{" "}
+            </ul>
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "Summer 2023",
+      content: (
+        <div className="flex flex-col gap-4 md:items-start items-center">
+          <Badge className="text-sm font-hanken w-max">Internship</Badge>
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-0.5">
+              <h3 className="text-xl font-bold font-oddolini">
+                Software Engineering Intern
+              </h3>
+              <h3 className="text-base font-bold text-zinc-700 font-hanken">
+                Product Services and Logistics, Caterpillar Inc.
+              </h3>
+            </div>
+            <ul className="list-disc list-inside">
+              <li
+                className="text-neutral-800 dark:text-neutral-200 text-xs md:text-base font-normal mb-2"
+                style={{
+                  listStylePosition: "inside",
+                  textIndent: "-1.5em",
+                  paddingLeft: "20px",
+                }}
+              >
+                Engineered an advanced object detection model leveraging
+                warehouse camera data to enhance real-time monitoring of safety
+                equipment usage in part warehouses with 98.2% accuracy.
+              </li>
+              <li
+                className="text-neutral-800 dark:text-neutral-200 text-xs md:text-base font-normal font-hanken mb-2"
+                style={{
+                  listStylePosition: "inside",
+                  textIndent: "-1.5em",
+                  paddingLeft: "20px",
+                }}
+              >
+                Presented a novel real-time worker safety monitoring solution to
+                managers & division executives, and showcased the MVP at the
+                Product Services and Logistics Division's Innovation Fair
+              </li>
+            </ul>
+          </div>
+        </div>
+      ),
+    },
+    {
       title: "2022",
       content: (
         <div className="flex flex-col gap-4 md:items-start items-center">
@@ -83,156 +233,6 @@ export function WorkTimeline() {
                 imageSrc={dynalabDemo.src}
               >
                 <InteractiveHoverButton text="Dynalab Demo!" />
-              </LinkPreview>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Summer 2023",
-      content: (
-        <div className="flex flex-col gap-4 md:items-start items-center">
-          <Badge className="text-sm font-hanken w-max">Internship</Badge>
-          <div className="flex flex-col gap-2">
-            <div className="flex flex-col gap-0.5">
-              <h3 className="text-xl font-bold font-oddolini">
-                Software Engineering Intern
-              </h3>
-              <h3 className="text-base font-bold text-zinc-700 font-hanken">
-                Product Services and Logistics, Caterpillar Inc.
-              </h3>
-            </div>
-            <ul className="list-disc list-inside">
-              <li
-                className="text-neutral-800 dark:text-neutral-200 text-xs md:text-base font-normal mb-2"
-                style={{
-                  listStylePosition: "inside",
-                  textIndent: "-1.5em",
-                  paddingLeft: "20px",
-                }}
-              >
-                Engineered an advanced object detection model leveraging
-                warehouse camera data to enhance real-time monitoring of safety
-                equipment usage in part warehouses with 98.2% accuracy.
-              </li>
-              <li
-                className="text-neutral-800 dark:text-neutral-200 text-xs md:text-base font-normal font-hanken mb-2"
-                style={{
-                  listStylePosition: "inside",
-                  textIndent: "-1.5em",
-                  paddingLeft: "20px",
-                }}
-              >
-                Presented a novel real-time worker safety monitoring solution to
-                managers & division executives, and showcased the MVP at the
-                Product Services and Logistics Division's Innovation Fair
-              </li>
-            </ul>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Summer 2024",
-      content: (
-        <div className="flex flex-col gap-4 z-20 md:items-start items-center">
-          <Badge className="text-sm font-hanken w-max">Internship</Badge>
-          <div className="flex flex-col gap-2">
-            <div className="flex flex-col gap-0.5">
-              <h3 className="text-xl font-bold font-oddolini">
-                Software Engineering Intern
-              </h3>
-              <h3 className="text-base font-bold text-zinc-700 font-hanken">
-                Product Services and Logistics, Caterpillar Inc.
-              </h3>
-            </div>
-            <ul className="list-disc list-inside">
-              <li
-                className="text-neutral-800 dark:text-neutral-200 text-xs md:text-base font-normal mb-2"
-                style={{
-                  listStylePosition: "inside",
-                  textIndent: "-1.5em",
-                  paddingLeft: "20px",
-                }}
-              >
-                Created a vision analytics model utilizing a 3D time of flight
-                (ToF) camera data to optimize space-utilization within shipping
-                crates and containers.
-              </li>{" "}
-              <li
-                className="text-neutral-800 dark:text-neutral-200 text-xs md:text-base font-normal mb-2"
-                style={{
-                  listStylePosition: "inside",
-                  textIndent: "-1.5em",
-                  paddingLeft: "20px",
-                }}
-              >
-                Tackled and resolved 10+ Business Development (BCD) issues
-                utilizing Snowflake, SQL, Snaplogic, SAP, and ServiceNow.
-              </li>{" "}
-            </ul>
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Current",
-      content: (
-        <div className="flex flex-col gap-4 md:items-start items-center">
-          <Badge className="text-sm font-hanken w-max">Part-time</Badge>
-          <div className="flex flex-col gap-2">
-            <div className="flex flex-col gap-0.5">
-              <h3 className="text-xl font-bold font-oddolini">
-                Software Developer
-              </h3>
-              <h3 className="text-base font-bold text-zinc-700 font-hanken">
-                Trieve AI (YC W24)
-              </h3>
-            </div>
-            <ul className="list-disc list-inside">
-              <li
-                className="text-neutral-800 dark:text-neutral-200 text-xs md:text-base font-normal mb-2"
-                style={{
-                  listStylePosition: "inside",
-                  textIndent: "-1.5em",
-                  paddingLeft: "20px",
-                }}
-              >
-                Developing frontend & backend features using TypeScript, Astro,
-                SolidJS, and Rust to help create the world’s first Embeddings
-                Management System (EMS) – powering 30k+ documentation websites
-              </li>{" "}
-              <li
-                className="text-neutral-800 dark:text-neutral-200 text-xs md:text-base font-normal mb-2"
-                style={{
-                  listStylePosition: "inside",
-                  textIndent: "-1.5em",
-                  paddingLeft: "20px",
-                }}
-              >
-                Architected, published, and maintained multiple Trieve API
-                clients and SDKs across Python, Typescript, Java, .NET, and Ruby
-                processing several million queries daily.
-              </li>{" "}
-              <li
-                className="text-neutral-800 dark:text-neutral-200 text-xs md:text-base font-normal mb-2"
-                style={{
-                  listStylePosition: "inside",
-                  textIndent: "-1.5em",
-                  paddingLeft: "20px",
-                }}
-              >
-                Spearheaded the development of 35+ new frontend and backend
-                features across the AI Search, RAG, Dashboard, and Demo Pages.
-              </li>{" "}
-            </ul>
-            <div className="flex gap-2 flex-wrap md:justify-start items-center justify-center">
-              <LinkPreview url="https://trieve.ai">
-                <InteractiveHoverButton text="Trieve Website" />
-              </LinkPreview>
-              <LinkPreview url="https://github.com/devflowinc/trieve">
-                <InteractiveHoverButton text="Repository" />
               </LinkPreview>
             </div>
           </div>
