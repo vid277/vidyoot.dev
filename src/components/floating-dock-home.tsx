@@ -8,6 +8,7 @@ import {
   IconHome,
   IconArticle,
   IconTerminal2,
+  IconBrandSpotify,
 } from "@tabler/icons-react";
 
 export function FloatingDockHome() {
@@ -19,14 +20,6 @@ export function FloatingDockHome() {
       ),
       href: "/",
     },
-
-    {
-      title: "Projects",
-      icon: (
-        <IconTerminal2 className="h-full w-full text-neutral-800 dark:text-neutral-200" />
-      ),
-      href: "/project",
-    },
     {
       title: "Blog",
       icon: (
@@ -35,9 +28,9 @@ export function FloatingDockHome() {
       href: "#",
     },
     {
-      title: "Changelog",
+      title: "Spotify",
       icon: (
-        <IconExchange className="h-full w-full text-neutral-800 dark:text-neutral-200" />
+        <IconBrandSpotify className="h-full w-full text-neutral-800 dark:text-neutral-200" />
       ),
       href: "#",
     },

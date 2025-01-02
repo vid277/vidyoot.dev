@@ -4,6 +4,7 @@ import { Work } from "@/components/work";
 import { Contact } from "@/components/contact";
 import { FloatingDockHome } from "@/components/floating-dock-home";
 import { ProjectPage } from "@/components/project-page";
+import { LinkSection } from "@/components/link-sections";
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
         <About />
         <Work />
         <ProjectPage />
+
+        <LinkSection />
       </div>
       <hr className="w-full h-1 bg-gray-200 dark:bg-gray-800" />
       <Contact />

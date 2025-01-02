@@ -6,14 +6,16 @@ import { IconBrandGithub, IconGlobe } from "@tabler/icons-react";
 import trieveLibrarian from "./images/trieve_librarian.png";
 import jhmcPortal from "./images/jhmc_portal.png";
 import titran from "./images/titran.png";
+import dynalab from "./images/dynalab.png";
+import embargo from "./images/embargo.png";
 
 export function ProjectPage() {
   return (
-    <div className="h-max w-full  relative flex flex-col items-start justify-start py-0 p-16 px-36 pb-32 gap-10">
+    <div className="h-max w-full  relative flex flex-col items-start justify-start px-36 pb-32 gap-10">
       <BoxReveal boxColor={"#5046e6"} duration={0.5}>
         <h1 className="text-6xl font-oddolini">Projects</h1>
       </BoxReveal>
-      <div className="flex flex-row items-start justify-start gap-10">
+      <div className="flex flex-row items-start justify-start gap-10 flex-wrap">
         <ProjectCard
           title="Trieve Librarian"
           description="A Chrome extension that can scrape websites, subselect relevant content and text, and search and index new bookmarks regularly allowing for better bookmark search."
@@ -79,14 +81,43 @@ export function ProjectPage() {
           ]}
         />
 
-        {/* 
-         - Titran
-         - This portfolio
-         - Dynalab
-         - Embargo
-         - Easy Upside
-         - Facebook Clone
-        */}
+        <ProjectCard
+          title="Dynalab"
+          description="A coarse-grained, cloud-based protein simulation tool using Python, C++, and Google Cloud."
+          dates="July 2022 - July 2024"
+          image={dynalab.src}
+          tags={[
+            "Python",
+            "C++",
+            "Google Cloud",
+            "NAMD",
+            "Google Colab",
+            "Upside",
+            "Molecular Dynamics",
+          ]}
+          links={[
+            {
+              type: "Website",
+              href: "https://colab.research.google.com/drive/1klGLUJi527VPdtSVAbr09xXSDIGHp5ND?authuser=1#scrollTo=vFOOzcaMPjN7",
+              icon: <IconGlobe className="size-3" />,
+            },
+          ]}
+        />
+
+        <ProjectCard
+          title="Embargo"
+          description="A level based dungeon game built using the Unity engine inspired by the 1980s game, 'Dungeon Explorer'. This game was built in a team of 3 over the course of 4 months."
+          dates="August 2022 - June 2023"
+          image={embargo.src}
+          tags={["Unity", "C#", "Blender", "Game Design", "2D Art"]}
+          links={[
+            {
+              type: "Github",
+              href: "https://github.com/vid277/embargo",
+              icon: <IconBrandGithub className="size-3" />,
+            },
+          ]}
+        />
       </div>
     </div>
   );

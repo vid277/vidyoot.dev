@@ -24,25 +24,31 @@ export function ToolDock() {
           <a
             href="https://www.linkedin.com/in/vidyootsenthil/"
             target="_blank"
-            rel="noopener noreferrer">
-                <Icons.linkedin className="size-full text-white" />
+            rel="noopener noreferrer"
+          >
+            <Icons.linkedin className="size-full text-white" />
           </a>
         </DockIcon>
-        <span className="text-white h-1 flex flex-col justify-center text-3xl"> | </span>
+        <span className="text-white h-1 flex flex-col justify-center text-3xl">
+          {" "}
+          |{" "}
+        </span>
         <DockIcon className="bg-black/10 dark:bg-white/10 hover:scale-130">
-        <a
+          <a
             href="mailto:vsenthil31@gatech.edu"
             target="_blank"
-            rel="noopener noreferrer">
-                <Icons.email className="size-full text-white" />
-        </a>
+            rel="noopener noreferrer"
+          >
+            <Icons.email className="size-full text-white" />
+          </a>
         </DockIcon>
         <DockIcon className="bg-black/10 dark:bg-white/10 hover:scale-130">
           <a
             href="https://calendly.com/vidyoot-senthil/meet-the-team"
             target="_blank"
-            rel="noopener noreferrer">
-                <Icons.calendar className="size-full text-white" />
+            rel="noopener noreferrer"
+          >
+            <Icons.calendar className="size-full text-white" />
           </a>
         </DockIcon>
       </Dock>
@@ -51,8 +57,15 @@ export function ToolDock() {
 }
 
 const Icons = {
-  calendar: (props: IconProps) => <CalendarIcon {...props} className="w-full h-full text-white hover:scale-130" />,
-  email: (props: IconProps) => <MailIcon {...props} className="w-full h-full text-white hover:scale-130" />,
+  calendar: (props: IconProps) => (
+    <CalendarIcon
+      {...props}
+      className="w-full h-full text-white hover:scale-130"
+    />
+  ),
+  email: (props: IconProps) => (
+    <MailIcon {...props} className="w-full h-full text-white hover:scale-130" />
+  ),
   linkedin: (props: IconProps) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <title>LinkedIn</title>
