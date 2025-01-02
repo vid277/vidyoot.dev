@@ -104,7 +104,7 @@ export default function Home() {
               <SpotifyTopSongs songs={topArtists} />
             </div>
           </div>
-          <div className="flex flex-col items-start justify-start gap-6">
+          <div className="flex flex-col items-start justify-start gap-5">
             <BoxReveal boxColor={"#5046e6"} duration={0.5}>
               <h1 className="text-6xl font-oddolini pb-1">
                 Now <span className="text-green-700">Playing</span>
