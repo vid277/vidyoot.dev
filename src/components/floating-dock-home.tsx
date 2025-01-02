@@ -28,11 +28,11 @@ export function FloatingDockHome() {
       href: "#",
     },
     {
-      title: "Spotify",
+      title: "Music",
       icon: (
         <IconBrandSpotify className="h-full w-full text-neutral-800 dark:text-neutral-200" />
       ),
-      href: "#",
+      href: "/music",
     },
     {
       title: "GitHub",
