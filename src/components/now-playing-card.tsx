@@ -16,7 +16,7 @@ export default function NowPlayingCard() {
           ? data.songUrl
           : "https://open.spotify.com/user/l7kht3r7nc3gvx4bojco00oh0"
       }
-      className="relative flex w-max  min-w-[30rem] min-h-[10rem] items-center space-x-6 rounded-xl border-2 border-gray-800 bg-black/90 p-8 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-white/20"
+      className="relative flex w-full max-w-[50rem] min-h-[10rem] items-center space-x-6 rounded-xl border-2 border-gray-800 bg-black/90 p-8 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-white/20"
     >
       <div className="w-36">
         {data?.isPlaying ? (
@@ -31,10 +31,10 @@ export default function NowPlayingCard() {
       </div>
 
       <div className="flex-1">
-        <p className="text-xl font-bold text-white">
+        <p className="text-xl font-bold text-white font-hanken">
           {data?.isPlaying ? data.title : "Not Listening"}
         </p>
-        <p className="text-base text-gray-400">
+        <p className="text-base text-gray-400 font-hanken">
           {data?.isPlaying ? data.artist : "Spotify"}
         </p>
       </div>

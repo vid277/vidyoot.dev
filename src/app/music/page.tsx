@@ -111,11 +111,11 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center md:items-start justify-center md:justify-start gap-5">
             <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-              <h1 className="text-6xl font-oddolini pb-1">
+              <h1 className="text-6xl font-oddolini pb-1 text-center md:text-left flex flex-row items-center md:items-start gap-3 flex-wrap md:justify-start justify-center">
                 Now <span className="text-green-700">Playing</span>
               </h1>
             </BoxReveal>
-            <div className="flex items-center justify-center bg-white w-full">
+            <div className="flex items-center justify-center bg-white">
               <NowPlayingCard />
             </div>
           </div>

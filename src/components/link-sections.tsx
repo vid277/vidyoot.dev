@@ -10,7 +10,7 @@ import Link from "next/link";
 
 export function LinkSection() {
   return (
-    <div className="w-full  relative flex md:flex-row flex-col  items-start justify-start md:px-36 px-14 mb-16 md:gap-10 gap-5">
+    <div className="w-full  relative flex md:flex-row flex-col  items-start justify-start md:px-36 px-14 mb-20 md:gap-10 gap-5">
       <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-black/95 md:shadow-xl cursor-pointer">
         <Link href="/blogs">
           <div className="flex flex-row items-center justify-center py-5 px-15 gap-3">
