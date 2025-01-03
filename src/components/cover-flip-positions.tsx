@@ -10,9 +10,9 @@ export function FlipPositions() {
   ];
 
   return (
-    <div className="flex justify-center items-center px-4 mt-[-1.5rem]">
-      <div className="text-4xl mx-auto font-normal text-gray-100 tracking-wide">
-        A
+    <div className="flex flex-col justify-center items-center px-4 mt-[-1.5rem]">
+      <div className="md:text-4xl text-2xl text-center font-normal text-gray-100 tracking-wide flex flex-wrap items-center justify-center gap-2">
+        <span>A</span>
         <FlipWords words={words} className="text-gray-100 tracking-wide" />
       </div>
     </div>
