@@ -37,7 +37,7 @@ export function ProjectCard({
   return (
     <Card
       className={
-        "flex flex-col gap-1 overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-[32rem] bg-white w-[22rem] p-2"
+        "flex flex-col gap-1 overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-[32rem] bg-white max-w-[20rem] p-2"
       }
     >
       <Link
@@ -71,7 +71,7 @@ export function ProjectCard({
           <div className="hidden font-sans text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
-          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert text-wrap">
             {description}
           </Markdown>
         </div>
