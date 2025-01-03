@@ -23,7 +23,9 @@ export default function Home() {
       </div>
       <hr className="w-full h-1 bg-gray-200 dark:bg-gray-800" />
       <Contact />
+      {/* <div className="md:block hidden"> */}
       <FloatingDockHome />
+      {/* </div> */}
     </div>
   );
 }
