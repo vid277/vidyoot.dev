@@ -91,7 +91,7 @@ export default function Home() {
         id="about"
       >
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"></div>
-        <div className="h-max w-screen relative flex flex-col items-center md:items-start justify-center md:justify-start md:px-36 px-14 mb-36 mt-36 gap-20">
+        <div className="h-max w-screen relative flex flex-col items-center md:items-start justify-center md:justify-start md:px-36 px-14 mb-32 mt-32 gap-20">
           <div className="flex flex-col items-center md:items-start md:justify-start justify-center gap-6 flex-wrap">
             <BoxReveal boxColor={"#5046e6"} duration={0.5}>
               <h1 className="text-6xl font-oddolini pb-1 w-100  text-center md:text-left items-center md:items-start flex flex-col md:flex-row gap-4 flex-wrap">
