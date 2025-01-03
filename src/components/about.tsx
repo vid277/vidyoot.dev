@@ -9,15 +9,17 @@ import { Badge } from "@/components/ui/badge";
 export function About() {
   return (
     <div className="relative flex items-center justify-center py-16" id="about">
-      <div className="h-max relative w-full p-20 px-36 pb-20 flex flex-col justify-start items-start gap-2">
-        <div className="flex flex-row justify-center items-start w-full mt-1">
-          <div className="flex flex-col gap-2 flex-1">
+      <div className="h-max relative w-full p-20 px-36 pb-20 flex flex-col justify-start items-start gap-2 md:gap-2">
+        <div className="flex flex-col justify-center items-center w-full mt-1 md:flex-row gap-4">
+          <div className="flex flex-col gap-2 flex-1 text-center md:text-left items-center md:items-start">
             <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-              <h1 className="text-6xl font-oddolini">About me.</h1>
+              <h1 className="text-6xl font-oddolini md:text-left text-center">
+                About me.
+              </h1>
             </BoxReveal>
             <div className="flex flex-col gap-10 mt-1">
-              <div className="w-5/6">
-                <h2 className="text-lg font-hanken">
+              <div className="w-full md:w-5/6">
+                <h2 className="text-lg font-hanken text-center md:text-left">
                   Hi! I'm Vidyoot Senthil, a software engineer based in Atlanta,
                   Georgia. I'm currently a student at the{" "}
                   <span className="font-bold">
@@ -33,10 +35,10 @@ export function About() {
                 </h2>
               </div>
               <div>
-                <h2 className="text-4xl font-bold font-oddolini text-gray-900 mb-3">
+                <h2 className="text-4xl font-bold font-oddolini text-gray-900 mb-3 text-center md:text-left">
                   Hobbies
                 </h2>{" "}
-                <div className="flex flex-row gap-2 flex-wrap w-[85%]">
+                <div className="flex flex-row gap-2 flex-wrap w-full justify-center md:justify-start md:w-[85%]">
                   <Badge variant="outline" className="text-base font-hanken">
                     Lifting
                   </Badge>
