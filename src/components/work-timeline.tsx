@@ -62,7 +62,7 @@ export function WorkTimeline() {
                 attendees.
               </li>
             </ul>
-            <div className="flex gap-2 flex-wrap md:items-start items-center justify-center">
+            <div className="flex gap-2 flex-wrap md:justify-start items-center justify-center">
               <LinkPreview
                 url="https://drive.google.com/file/d/1J4gvl3n81ZEVlHE_jY0kZG8VZlZkqsVR/view?usp=sharing"
                 isStatic={true}
@@ -227,7 +227,7 @@ export function WorkTimeline() {
                 features across the AI Search, RAG, Dashboard, and Demo Pages.
               </li>{" "}
             </ul>
-            <div className="flex gap-2 flex-wrap md:items-start items-center justify-center">
+            <div className="flex gap-2 flex-wrap md:justify-start items-center justify-center">
               <LinkPreview url="https://trieve.ai">
                 <InteractiveHoverButton text="Trieve Website" />
               </LinkPreview>
@@ -262,3 +262,9 @@ export function WorkTimeline() {
     </div>
   );
 }
+
+const MobileLink = ({ url, text }: { url: string; text: string }) => (
+  <Link href={url} target="_blank" rel="noopener noreferrer">
+    <InteractiveHoverButton text={text} />
+  </Link>
+);

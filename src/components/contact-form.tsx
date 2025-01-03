@@ -76,9 +76,9 @@ export function ProfileForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(handleSubmit)}
-        className="space-y-4 w-full items-start justify-start pl-0"
+        className="flex flex-col  flex-1 w-full space-y-4 items-center md:items-start md:justify-start justify-center pl-0"
       >
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-4 w-full">
           {/* First Name */}
           <FormField
             control={form.control}
@@ -154,7 +154,10 @@ export function ProfileForm() {
 
         {isSent && (
           <div className="flex flex-row gap-4 font-hanken text-base font-semibold text-black">
-            <p>Thanks for reaching out! I will get back to you as soon as possible.</p>
+            <p>
+              Thanks for reaching out! I will get back to you as soon as
+              possible.
+            </p>
           </div>
         )}
         {/* Animated Subscribe Button */}

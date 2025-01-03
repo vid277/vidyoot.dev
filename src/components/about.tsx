@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 export function About() {
   return (
     <div className="relative flex items-center justify-center py-16" id="about">
-      <div className="h-max relative w-full p-20 px-36 pb-20 flex flex-col justify-start items-start gap-2 md:gap-2">
+      <div className="h-max relative w-full p-20 md:px-36 px-14 pb-20 flex flex-col justify-start items-start gap-2 md:gap-2">
         <div className="flex flex-col justify-center items-center w-full mt-1 md:flex-row gap-4">
           <div className="flex flex-col gap-2 flex-1 text-center md:text-left items-center md:items-start">
             <BoxReveal boxColor={"#5046e6"} duration={0.5}>

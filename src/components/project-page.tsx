@@ -11,11 +11,11 @@ import embargo from "./images/embargo.png";
 
 export function ProjectPage() {
   return (
-    <div className="h-max w-full  relative flex flex-col items-start justify-start px-36 pb-32 gap-10">
+    <div className="h-max w-full  relative flex flex-col md:items-start items-center justify-start  md:px-36 px-14 md:mb-20 mb-16 gap-10 ">
       <BoxReveal boxColor={"#5046e6"} duration={0.5}>
         <h1 className="text-6xl font-oddolini">Projects</h1>
       </BoxReveal>
-      <div className="flex flex-row items-start justify-start gap-10 flex-wrap">
+      <div className="flex flex-row md:items-start items-center justify-start gap-10 flex-wrap">
         <ProjectCard
           title="Trieve Librarian"
           description="A Chrome extension that can scrape websites, subselect relevant content and text, and search and index new bookmarks regularly allowing for better bookmark search."
