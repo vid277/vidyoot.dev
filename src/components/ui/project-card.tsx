@@ -37,7 +37,7 @@ export function ProjectCard({
   return (
     <Card
       className={
-        "rounded-lg text-card-foreground flex flex-col gap-1 overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out md:h-[33rem] h-full bg-white md:max-w-[20rem] w-full p-2"
+        "rounded-lg text-card-foreground flex flex-col gap-1 overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out md:h-[33.5rem] h-full bg-white md:max-w-[20rem] w-full p-2"
       }
     >
       <Link
