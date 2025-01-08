@@ -5,9 +5,9 @@ import BoxReveal from "./ui/box-reveal";
 
 export function Work() {
   return (
-    <div className="h-max w-full  relative flex flex-col items-center md:items-start justify-start py-8 p-16 md:px-36 px-14 mb-28 ">
+    <div className="h-max w-full  relative flex flex-col items-center md:items-start justify-start py-8 p-16 md:px-36 px-16 mb-20 ">
       <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-        <h1 className="text-6xl font-oddolini text-center md:text-left">
+        <h1 className="text-6xl md:text-6xl font-oddolini text-center md:text-left">
           Experience
         </h1>
       </BoxReveal>
