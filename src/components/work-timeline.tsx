@@ -1,6 +1,7 @@
 import React from "react";
 import { Timeline } from "./ui/timeline";
 import { Badge } from "./ui/badge";
+import Link from "next/link";
 import InteractiveHoverButton from "./ui/interactive-hover-button";
 import { LinkPreview } from "./ui/link-preview";
 import poster2023 from "./images/poster_2023.png";
@@ -12,7 +13,7 @@ export function WorkTimeline() {
     {
       title: "2022",
       content: (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 md:items-start items-center">
           <Badge className="text-sm font-hanken w-max">Research</Badge>
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-0.5">
@@ -61,7 +62,7 @@ export function WorkTimeline() {
                 attendees.
               </li>
             </ul>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap md:justify-start items-center justify-center">
               <LinkPreview
                 url="https://drive.google.com/file/d/1J4gvl3n81ZEVlHE_jY0kZG8VZlZkqsVR/view?usp=sharing"
                 isStatic={true}
@@ -91,7 +92,7 @@ export function WorkTimeline() {
     {
       title: "Summer 2023",
       content: (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 md:items-start items-center">
           <Badge className="text-sm font-hanken w-max">Internship</Badge>
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-0.5">
@@ -135,7 +136,7 @@ export function WorkTimeline() {
     {
       title: "Summer 2024",
       content: (
-        <div className="flex flex-col gap-4 z-20">
+        <div className="flex flex-col gap-4 z-20 md:items-start items-center">
           <Badge className="text-sm font-hanken w-max">Internship</Badge>
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-0.5">
@@ -178,7 +179,7 @@ export function WorkTimeline() {
     {
       title: "Current",
       content: (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 md:items-start items-center">
           <Badge className="text-sm font-hanken w-max">Part-time</Badge>
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-0.5">
@@ -226,7 +227,7 @@ export function WorkTimeline() {
                 features across the AI Search, RAG, Dashboard, and Demo Pages.
               </li>{" "}
             </ul>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap md:justify-start items-center justify-center">
               <LinkPreview url="https://trieve.ai">
                 <InteractiveHoverButton text="Trieve Website" />
               </LinkPreview>
@@ -240,8 +241,30 @@ export function WorkTimeline() {
     },
   ];
   return (
-    <div className="w-full">
-      <Timeline data={data} />
+    <div className="w-full md:block mt-10 md:mt-0">
+      <Timeline
+        data={data.map((item) => ({ ...item, className: "timeline-entry" }))}
+        className="hidden md:block"
+      />
+
+      <div className="flex flex-col gap-8 md:hidden">
+        {data.map((item, index) => (
+          <div key={index} className="relative">
+            <div className="mb-2 font-bold text-xl font-oddolini text-center">
+              {item.title}
+            </div>
+            <div className="flex flex-col gap-2 font-hanken text-center items-center justify-center">
+              {item.content}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
+
+const MobileLink = ({ url, text }: { url: string; text: string }) => (
+  <Link href={url} target="_blank" rel="noopener noreferrer">
+    <InteractiveHoverButton text={text} />
+  </Link>
+);
