@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FollowerPointerCard } from "./ui/following-pointers";
+import { FollowerPointerCard } from "./following-pointers";
 
 type Song = {
   title: string;

@@ -1,6 +1,6 @@
 import { Contact } from "@/components/contact";
 import { FloatingDockHome } from "@/components/floating-dock-home";
-import SpotifyTopSongs from "@/components/spotify-cards";
+import SpotifyTopSongs from "@/components/ui/spotify-cards";
 
 import bestInterest from "@/components/images/best_interest.jpg";
 import newMagicWand from "@/components/images/new_magic_wand.jpeg";

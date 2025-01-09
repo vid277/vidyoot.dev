@@ -25,7 +25,7 @@ export function FloatingDockHome() {
       icon: (
         <IconArticle className="h-full w-full text-neutral-800 dark:text-neutral-200" />
       ),
-      href: "#",
+      href: "/blogs",
     },
     {
       title: "Music",
@@ -33,6 +33,13 @@ export function FloatingDockHome() {
         <IconBrandSpotify className="h-full w-full text-neutral-800 dark:text-neutral-200" />
       ),
       href: "/music",
+    },
+    {
+      title: "Playground",
+      icon: (
+        <IconTerminal2 className="h-full w-full text-neutral-800 dark:text-neutral-200" />
+      ),
+      href: "/playground",
     },
     {
       title: "GitHub",

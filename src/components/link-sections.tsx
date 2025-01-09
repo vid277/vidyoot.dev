@@ -11,8 +11,8 @@ import Link from "next/link";
 export function LinkSection() {
   return (
     <div className="w-full  relative flex md:flex-row flex-col  items-start justify-start md:px-36 px-14 mb-20 md:gap-10 gap-5">
-      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-black/95 md:shadow-xl cursor-pointer">
-        <Link href="/blogs">
+      <Link href="/blogs" className="w-full">
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-black/95 md:shadow-xl cursor-pointer">
           <div className="flex flex-row items-center justify-center py-5 px-15 gap-3">
             <Meteors number={13} />
             <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b text-white font-hanken bg-clip-text text-center text-2xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
@@ -20,10 +20,11 @@ export function LinkSection() {
             </span>
             <IconArticle className="size-6 text-white" />
           </div>
-        </Link>
-      </div>
-      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-black/95 md:shadow-xl cursor-pointer">
-        <Link href="/music">
+        </div>
+      </Link>
+
+      <Link href="/music" className="w-full">
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-black/95 md:shadow-xl cursor-pointer">
           <div className="flex flex-row items-center justify-center py-5 px-15 gap-3">
             <Meteors number={13} />
             <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b text-white font-hanken bg-clip-text text-center text-2xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
@@ -31,10 +32,10 @@ export function LinkSection() {
             </span>
             <IconBrandSpotify className="size-6 text-white" />
           </div>
-        </Link>
-      </div>
-      <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-black/95 md:shadow-xl cursor-pointer">
-        <Link href="/playground">
+        </div>
+      </Link>
+      <Link href="/playground" className="w-full">
+        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-black/95 md:shadow-xl cursor-pointer">
           <div className="flex flex-row items-center justify-center py-5 px-15 gap-3">
             <Meteors number={13} />
             <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b text-white font-hanken bg-clip-text text-center text-2xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
@@ -42,8 +43,8 @@ export function LinkSection() {
             </span>
             <IconTerminal2 className="size-6 text-white" />
           </div>
-        </Link>
-      </div>
+        </div>
+      </Link>
     </div>
   );
 }
