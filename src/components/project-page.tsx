@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import BoxReveal from "./ui/box-reveal";
 import { ProjectCard } from "./ui/project-card";
 import { IconBrandGithub, IconGlobe } from "@tabler/icons-react";
 import trieveLibrarian from "./images/trieve_librarian.png";
@@ -12,9 +11,7 @@ import embargo from "./images/embargo.png";
 export function ProjectPage() {
   return (
     <div className="h-max w-full  relative flex flex-col md:items-start items-center justify-start  md:px-36 px-14 md:mb-20 mb-16 gap-10 ">
-      <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-        <h1 className="text-6xl font-oddolini">Projects</h1>
-      </BoxReveal>
+      <h1 className="text-6xl font-oddolini">Projects</h1>
       <div className="flex flex-row md:items-start items-center justify-start gap-10 flex-wrap">
         <ProjectCard
           title="Trieve Librarian"

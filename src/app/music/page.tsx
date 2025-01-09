@@ -1,7 +1,6 @@
 import { Contact } from "@/components/contact";
 import { FloatingDockHome } from "@/components/floating-dock-home";
 import SpotifyTopSongs from "@/components/spotify-cards";
-import BoxReveal from "@/components/ui/box-reveal";
 
 import bestInterest from "@/components/images/best_interest.jpg";
 import newMagicWand from "@/components/images/new_magic_wand.jpeg";
@@ -93,28 +92,22 @@ export default function Home() {
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_30%,black)]"></div>
         <div className="h-max w-screen relative flex flex-col items-center md:items-start justify-center md:justify-start md:px-36 px-14 mb-32 mt-32 gap-20">
           <div className="flex flex-col items-center md:items-start md:justify-start justify-center gap-6 flex-wrap">
-            <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-              <h1 className="text-6xl font-oddolini pb-1 w-100  text-center md:text-left items-center md:items-start flex flex-col md:flex-row gap-4 flex-wrap">
-                <span className="text-green-700">Spotify </span>
-                Top Songs <span className="hidden md:block">& Artists</span>
-              </h1>
-            </BoxReveal>
+            <h1 className="text-6xl font-oddolini pb-1 w-100  text-center md:text-left items-center md:items-start flex flex-col md:flex-row gap-4 flex-wrap">
+              <span className="text-green-700">Spotify </span>
+              Top Songs <span className="hidden md:block">& Artists</span>
+            </h1>
             <div className="flex items-center justify-center md:gap-24 gap-10 md:flex-row flex-col flex-wrap">
               <SpotifyTopSongs songs={topSongs} />
-              <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-                <h1 className="text-6xl font-oddolini pb-1 text-center md:text-left flex flex-col md:flex-row items-center md:items-start gap-4 block md:hidden">
-                  Top Artists
-                </h1>
-              </BoxReveal>
+              <h1 className="text-6xl font-oddolini pb-1 text-center md:text-left flex flex-col md:flex-row items-center md:items-start gap-4 block md:hidden">
+                Top Artists
+              </h1>
               <SpotifyTopSongs songs={topArtists} />
             </div>
           </div>
           <div className="flex flex-col items-center md:items-start justify-center md:justify-start gap-5">
-            <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-              <h1 className="text-6xl font-oddolini pb-1 text-center md:text-left flex flex-row items-center md:items-start gap-3 flex-wrap md:justify-start justify-center">
-                Now <span className="text-green-700">Playing</span>
-              </h1>
-            </BoxReveal>
+            <h1 className="text-6xl font-oddolini pb-1 text-center md:text-left flex flex-row items-center md:items-start gap-3 flex-wrap md:justify-start justify-center">
+              Now <span className="text-green-700">Playing</span>
+            </h1>
             <div className="flex items-center justify-center bg-white">
               <NowPlayingCard />
             </div>

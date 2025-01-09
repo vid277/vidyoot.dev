@@ -3,7 +3,6 @@ import React from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
 import Image from "next/image";
 import vidyoot_image from "./images/vidyoot_sen.png";
-import { BoxReveal } from "./ui/box-reveal";
 import { Badge } from "@/components/ui/badge";
 
 export function About() {
@@ -15,11 +14,9 @@ export function About() {
       <div className="h-max relative w-full p-20 md:px-36 px-14 pb-20 flex flex-col justify-start items-start gap-2 md:gap-2">
         <div className="flex flex-col justify-center items-center w-full mt-1 md:flex-row gap-4">
           <div className="flex flex-col gap-2 flex-1 text-center md:text-left items-center md:items-start">
-            <BoxReveal boxColor={"#5046e6"} duration={0.5}>
-              <h1 className="text-6xl font-oddolini md:text-left text-center">
-                About me.
-              </h1>
-            </BoxReveal>
+            <h1 className="text-6xl font-oddolini md:text-left text-center">
+              About me.
+            </h1>
             <div className="flex flex-col gap-10 mt-1">
               <div className="w-full md:w-5/6">
                 <h2 className="text-lg font-hanken text-center md:text-left">
