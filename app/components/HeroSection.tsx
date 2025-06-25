@@ -8,6 +8,8 @@ export default function HeroSection() {
   const [currentView, setCurrentView] = useState("all");
   const [command, setCommand] = useState("");
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const dragControls = useDragControls();
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -58,43 +60,56 @@ export default function HeroSection() {
   };
 
   useEffect(() => {
-    if (inputRef.current && !isDragging) {
+    if (inputRef.current && !isDragging && !isMobile) {
       inputRef.current.focus();
     }
-  }, [isDragging, currentView]);
+  }, [isDragging, currentView, isMobile]);
+
+  useEffect(() => {
+    setIsClient(true);
+
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const renderContent = () => {
     switch (currentView) {
       case "all":
         return (
           <div className="space-y-6">
-            {/* Header */}
             <div>
               <p className="text-green-500">$ whoami</p>
-              <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-2">
+              <h1 className="text-xl sm:text-2xl md:text-4xl font-bold mt-2 mb-2">
                 Vidyoot Senthil
               </h1>
-              <p className="text-gray-400 mb-4">
+              <p className="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base">
                 cs student @ georgia tech | full-stack engineer
               </p>
             </div>
 
-            {/* Work Experience */}
             <div>
-              <p className="text-green-500 mb-3">$ cat work_experience.txt</p>
-              <div className="text-gray-300 space-y-3">
+              <p className="text-green-500 mb-2 sm:mb-3">
+                $ cat work_experience.txt
+              </p>
+              <div className="text-gray-300 space-y-2 sm:space-y-3">
                 <div>
-                  <p className="text-blue-400">
+                  <p className="text-blue-400 text-sm sm:text-base">
                     • Software Developer, Trieve AI (YC W24) [2024-Present]
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-3 sm:ml-4 text-xs sm:text-sm">
                     - Developing EMS powering 30k+ documentation websites
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-3 sm:ml-4 text-xs sm:text-sm">
                     - Built API clients across Python, TypeScript, Java, .NET,
                     Ruby
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-3 sm:ml-4 text-xs sm:text-sm">
                     - Delivered 35+ frontend/backend features for AI Search &
                     RAG
                   </p>
@@ -145,7 +160,6 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Projects */}
             <div>
               <p className="text-green-500 mb-3">$ ls projects/</p>
               <div className="text-gray-300 space-y-3">
@@ -263,7 +277,6 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Skills */}
             <div>
               <p className="text-green-500 mb-3">$ cat skills.txt</p>
               <div className="flex flex-wrap gap-2">
@@ -294,7 +307,6 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Contact */}
             <div>
               <p className="text-green-500 mb-3">$ contact --info</p>
               <div className="text-gray-300 space-y-2">
@@ -334,19 +346,24 @@ export default function HeroSection() {
             </div>
 
             {/* Navigation hint */}
-            <div className="border-t border-gray-700 pt-4 mt-6">
+            <div className="border-t border-gray-700 pt-3 sm:pt-4 mt-4 sm:mt-6">
               <p className="text-gray-500 text-xs mb-2">
                 💡 Try these commands for focused views:
               </p>
               <div className="text-gray-400 text-xs space-y-1">
-                <p>
-                  <span className="text-blue-400">work</span> •{" "}
-                  <span className="text-yellow-400">projects</span> •{" "}
-                  <span className="text-green-400">skills</span> •{" "}
-                  <span className="text-purple-400">contact</span> •{" "}
+                <p className="flex flex-wrap gap-2">
+                  <span className="text-blue-400">work</span>
+                  <span className="text-yellow-400">projects</span>
+                  <span className="text-green-400">skills</span>
+                  <span className="text-purple-400">contact</span>
                   <span className="text-gray-400">help</span>
                 </p>
               </div>
+              {isClient && isMobile && (
+                <p className="text-gray-500 text-xs mt-2">
+                  📱 Tap the command line above to type commands
+                </p>
+              )}
             </div>
           </div>
         );
@@ -685,7 +702,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center p-2 sm:p-4 md:p-8">
+    <section className="relative min-h-screen flex items-start sm:items-center justify-center p-2 sm:p-4 md:p-8 pt-4 sm:pt-2">
       <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-blue-600/20 opacity-10" />
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
@@ -693,7 +710,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 w-full max-w-5xl">
         <motion.div
-          drag={window.innerWidth >= 768 ? true : false}
+          drag={isClient && !isMobile}
           dragControls={dragControls}
           dragMomentum={false}
           dragElastic={0.1}
@@ -709,31 +726,33 @@ export default function HeroSection() {
           onDragStart={() => setIsDragging(true)}
           onDragEnd={() => setIsDragging(false)}
           dragListener={false}
-          className="bg-black/50 backdrop-blur-lg rounded-lg border border-gray-800 shadow-2xl w-full max-w-4xl mx-auto"
+          className="bg-black/50 backdrop-blur-lg rounded-lg border border-gray-800 shadow-2xl w-full max-w-5xl mx-auto min-h-[85vh] sm:min-h-0"
         >
           <div
-            onPointerDown={(e) => dragControls.start(e)}
-            className={`flex items-center gap-2 p-4 border-b border-gray-800 ${
-              isDragging ? "cursor-grabbing" : "cursor-grab"
+            onPointerDown={(e) =>
+              isClient && !isMobile && dragControls.start(e)
+            }
+            className={`flex items-center gap-2 p-3 sm:p-4 border-b border-gray-800 ${
+              isClient &&
+              !isMobile &&
+              (isDragging ? "cursor-grabbing" : "cursor-grab")
             }`}
           >
-            <div className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-400 transition-colors" />
-            <div className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-400 transition-colors" />
-            <div className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-400 transition-colors" />
-            <span className="ml-4 text-gray-400 text-sm font-mono">
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500 hover:bg-red-400 transition-colors" />
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500 hover:bg-yellow-400 transition-colors" />
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500 hover:bg-green-400 transition-colors" />
+            <span className="ml-2 sm:ml-4 text-gray-400 text-xs sm:text-sm font-mono">
               vidyoot@portfolio:~$
             </span>
           </div>
-          <div className="p-6 min-h-[70vh] max-h-[80vh] flex flex-col">
-            {/* Current Content */}
-            <div className="flex-1 font-mono text-sm mb-4 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600">
+          <div className="p-3 sm:p-6 min-h-[80vh] sm:min-h-[70vh] max-h-[85vh] sm:max-h-[80vh] flex flex-col">
+            <div className="flex-1 font-mono text-xs sm:text-sm mb-3 sm:mb-4 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600">
               {renderContent()}
             </div>
 
-            {/* Command History */}
-            <div className="flex-shrink-0 mb-4">
-              <div className="font-mono text-sm space-y-1 max-h-24 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600">
-                {commandHistory.slice(-6).map((cmd, index) => (
+            <div className="flex-shrink-0 mb-3 sm:mb-4">
+              <div className="font-mono text-xs sm:text-sm space-y-1 max-h-16 sm:max-h-24 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600">
+                {commandHistory.slice(-4).map((cmd, index) => (
                   <p key={index} className="text-gray-400 text-xs break-words">
                     {cmd}
                   </p>
@@ -741,9 +760,26 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Command Input */}
-            <div className="flex-shrink-0 flex items-center font-mono text-sm border-t border-gray-700 pt-4">
-              <span className="text-green-500 mr-2 flex-shrink-0">
+            <div
+              className={`flex-shrink-0 flex items-center font-mono text-xs sm:text-sm border-t border-gray-700 pt-3 sm:pt-4 ${
+                isClient && isMobile
+                  ? "bg-gray-800/30 rounded-b-lg px-2 py-2 cursor-pointer active:bg-gray-700/40"
+                  : ""
+              }`}
+              onClick={() => {
+                if (inputRef.current) {
+                  inputRef.current.focus();
+                  inputRef.current.click();
+                }
+              }}
+              onTouchStart={(e) => {
+                e.preventDefault();
+                if (inputRef.current) {
+                  inputRef.current.focus();
+                }
+              }}
+            >
+              <span className="text-green-500 mr-1 sm:mr-2 flex-shrink-0 text-xs sm:text-sm">
                 vidyoot@portfolio:~$
               </span>
               <input
@@ -752,9 +788,32 @@ export default function HeroSection() {
                 value={command}
                 onChange={(e) => setCommand(e.target.value)}
                 onKeyDown={handleKeyPress}
-                className="flex-1 bg-transparent text-white outline-none min-w-0"
-                placeholder="Type a command... (try 'help')"
-                autoFocus
+                onTouchStart={(e) => {
+                  e.stopPropagation();
+                  if (inputRef.current) {
+                    inputRef.current.focus();
+                  }
+                }}
+                onFocus={() => {
+                  if (inputRef.current) {
+                    inputRef.current.scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                    });
+                  }
+                }}
+                className="flex-1 bg-transparent text-white outline-none min-w-0 text-xs sm:text-sm touch-manipulation"
+                placeholder={
+                  isClient && isMobile
+                    ? "Tap here to type..."
+                    : "Type a command... (try 'help')"
+                }
+                autoFocus={false}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="none"
+                spellCheck="false"
+                inputMode="text"
               />
             </div>
           </div>
