@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useDragControls } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
 export default function HeroSection() {
@@ -8,6 +8,7 @@ export default function HeroSection() {
   const [currentView, setCurrentView] = useState("all");
   const [command, setCommand] = useState("");
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
+  const dragControls = useDragControls();
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleCommand = (cmd: string) => {
@@ -684,7 +685,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center p-4 md:p-8">
+    <section className="relative min-h-screen flex items-center justify-center p-2 sm:p-4 md:p-8">
       <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-blue-600/20 opacity-10" />
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
@@ -692,23 +693,26 @@ export default function HeroSection() {
 
       <div className="relative z-10 w-full max-w-5xl">
         <motion.div
+          drag={window.innerWidth >= 768 ? true : false}
+          dragControls={dragControls}
+          dragMomentum={false}
+          dragElastic={0.1}
+          dragConstraints={{
+            top: -100,
+            left: -100,
+            right: 100,
+            bottom: 100,
+          }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="bg-black/50 backdrop-blur-lg rounded-lg border border-gray-800 shadow-2xl"
+          onDragStart={() => setIsDragging(true)}
+          onDragEnd={() => setIsDragging(false)}
+          dragListener={false}
+          className="bg-black/50 backdrop-blur-lg rounded-lg border border-gray-800 shadow-2xl w-full max-w-4xl mx-auto"
         >
-          <motion.div
-            drag
-            dragMomentum={false}
-            dragElastic={0.1}
-            dragConstraints={{
-              top: -200,
-              left: -200,
-              right: 200,
-              bottom: 200,
-            }}
-            onDragStart={() => setIsDragging(true)}
-            onDragEnd={() => setIsDragging(false)}
+          <div
+            onPointerDown={(e) => dragControls.start(e)}
             className={`flex items-center gap-2 p-4 border-b border-gray-800 ${
               isDragging ? "cursor-grabbing" : "cursor-grab"
             }`}
@@ -719,7 +723,7 @@ export default function HeroSection() {
             <span className="ml-4 text-gray-400 text-sm font-mono">
               vidyoot@portfolio:~$
             </span>
-          </motion.div>
+          </div>
           <div className="p-6 min-h-[70vh] max-h-[80vh] flex flex-col">
             {/* Current Content */}
             <div className="flex-1 font-mono text-sm mb-4 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600">
