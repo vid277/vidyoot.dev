@@ -96,76 +96,76 @@ export default function HeroSection() {
         return (
           <div className="space-y-6">
             <div>
-              <p className="text-green-500">$ whoami</p>
+              <p className="text-green-700 font-bold">$ whoami</p>
               <h1 className="text-xl sm:text-2xl md:text-4xl font-bold mt-2 mb-2">
                 Vidyoot Senthil
               </h1>
-              <p className="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base">
+              <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">
                 cs student @ georgia tech | full-stack engineer
               </p>
             </div>
 
             <div>
-              <p className="text-green-500 mb-2 sm:mb-3">
+              <p className="text-green-700 font-bold mb-2 sm:mb-3">
                 $ cat work_experience.txt
               </p>
-              <div className="text-gray-300 space-y-2 sm:space-y-3">
+              <div className="text-gray-800 space-y-2 sm:space-y-3">
                 <div>
-                  <p className="text-blue-400 text-sm sm:text-base">
+                  <p className="text-blue-700 text-sm sm:text-base font-semibold">
                     • Software Developer, Trieve AI (YC W24) [2024-Present]
                   </p>
-                  <p className="ml-3 sm:ml-4 text-xs sm:text-sm">
+                  <p className="ml-3 sm:ml-4 text-xs sm:text-sm text-gray-700">
                     - Developing EMS powering 30k+ documentation websites
                   </p>
-                  <p className="ml-3 sm:ml-4 text-xs sm:text-sm">
+                  <p className="ml-3 sm:ml-4 text-xs sm:text-sm text-gray-700">
                     - Built API clients across Python, TypeScript, Java, .NET,
                     Ruby
                   </p>
-                  <p className="ml-3 sm:ml-4 text-xs sm:text-sm">
+                  <p className="ml-3 sm:ml-4 text-xs sm:text-sm text-gray-700">
                     - Delivered 35+ frontend/backend features for AI Search &
                     RAG
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-blue-400">
+                  <p className="text-blue-700 font-semibold">
                     • Software Engineering Intern, Caterpillar Inc. [Summer
                     2024]
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     - Created 3D ToF camera vision analytics for space
                     optimization
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     - Resolved 10+ BCD issues using Snowflake, SQL, SAP
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-blue-400">
+                  <p className="text-blue-700 font-semibold">
                     • Software Engineering Intern, Caterpillar Inc. [Summer
                     2023]
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     - Built object detection model with 98.2% accuracy
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     - Presented safety monitoring solution to executives
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-blue-400">
+                  <p className="text-blue-700 font-semibold">
                     • Student Researcher, University of Chicago [2022-2024]
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     - Engineered protein simulation tool: 6x speed, 3.2x storage
                     reduction
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     - Developed molecular dynamics libraries in Python, C++, R
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     - Presented to 300+ attendees at symposium
                   </p>
                 </div>
@@ -173,22 +173,22 @@ export default function HeroSection() {
             </div>
 
             <div>
-              <p className="text-green-500 mb-3">$ ls projects/</p>
-              <div className="text-gray-300 space-y-3">
+              <p className="text-green-700 font-bold mb-3">$ ls projects/</p>
+              <div className="text-gray-800 space-y-3">
                 <div>
-                  <p className="text-yellow-400">
+                  <p className="text-yellow-600 font-semibold">
                     • Trieve Librarian [Chrome Extension, 2024]
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     - Website scraping & semantic search for bookmarks
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     -{" "}
                     <a
                       href="https://chromewebstore.google.com/detail/trieve-librarian/lahoelkigecebpmgcfnkkmaaibccipal"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 underline"
+                      className="text-blue-700 hover:text-blue-800 underline font-medium"
                     >
                       Chrome Web Store
                     </a>{" "}
@@ -197,7 +197,7 @@ export default function HeroSection() {
                       href="https://github.com/devflowinc/trieve-librarian"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 underline"
+                      className="text-blue-700 hover:text-blue-800 underline font-medium"
                     >
                       GitHub
                     </a>
@@ -205,22 +205,22 @@ export default function HeroSection() {
                 </div>
 
                 <div>
-                  <p className="text-yellow-400">
+                  <p className="text-yellow-600 font-semibold">
                     • JHMC Testing Portal [Full-Stack, 2022-2024]
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     - Serves 500+ competitors annually for math contests
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     - Built with TypeScript, Node.js, Google Cloud
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     -{" "}
                     <a
                       href="https://github.com/vid277/jhmc-testing-portal"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 underline"
+                      className="text-blue-700 hover:text-blue-800 underline font-medium"
                     >
                       GitHub
                     </a>
@@ -228,19 +228,19 @@ export default function HeroSection() {
                 </div>
 
                 <div>
-                  <p className="text-yellow-400">
+                  <p className="text-yellow-600 font-semibold">
                     • Dynalab [Research Tool, 2022-2024]
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     - Cloud-based protein simulation using Python, C++
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     -{" "}
                     <a
                       href="https://github.com/vid277/dynalab"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 underline"
+                      className="text-blue-700 hover:text-blue-800 underline font-medium"
                     >
                       GitHub
                     </a>
@@ -248,19 +248,19 @@ export default function HeroSection() {
                 </div>
 
                 <div>
-                  <p className="text-yellow-400">
+                  <p className="text-yellow-600 font-semibold">
                     • Titran [Programming Language, 2023]
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     - Esoteric language with custom interpreter & compiler
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     -{" "}
                     <a
                       href="https://github.com/vid277/titran"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 underline"
+                      className="text-blue-700 hover:text-blue-800 underline font-medium"
                     >
                       GitHub
                     </a>
@@ -268,19 +268,19 @@ export default function HeroSection() {
                 </div>
 
                 <div>
-                  <p className="text-yellow-400">
+                  <p className="text-yellow-600 font-semibold">
                     • Embargo [Unity Game, 2022-2023]
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     - Team-built dungeon explorer game in C#
                   </p>
-                  <p className="ml-4 text-sm">
+                  <p className="ml-4 text-sm text-gray-700">
                     -{" "}
                     <a
                       href="https://github.com/vid277/embargo-game"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-400 hover:text-blue-300 underline"
+                      className="text-blue-700 hover:text-blue-800 underline font-medium"
                     >
                       GitHub
                     </a>
@@ -290,43 +290,43 @@ export default function HeroSection() {
             </div>
 
             <div>
-              <p className="text-green-500 mb-3">$ cat skills.txt</p>
+              <p className="text-green-700 font-bold mb-3">$ cat skills.txt</p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                   TypeScript
                 </span>
-                <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                   Python
                 </span>
-                <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                   Rust
                 </span>
-                <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                   React
                 </span>
-                <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                   Node.js
                 </span>
-                <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                   C++
                 </span>
-                <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                   Google Cloud
                 </span>
-                <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                   SQL
                 </span>
               </div>
             </div>
 
             <div>
-              <p className="text-green-500 mb-3">$ contact --info</p>
-              <div className="text-gray-300 space-y-2">
+              <p className="text-green-700 font-bold mb-3">$ contact --info</p>
+              <div className="text-gray-800 space-y-2">
                 <p>
                   • Email:{" "}
                   <a
                     href="mailto:vidyoots@gmail.com"
-                    className="text-blue-400 hover:text-blue-300 underline"
+                    className="text-blue-700 hover:text-blue-800 underline font-medium"
                   >
                     vidyoots@gmail.com
                   </a>
@@ -337,7 +337,7 @@ export default function HeroSection() {
                     href="https://github.com/vid277"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline"
+                    className="text-blue-700 hover:text-blue-800 underline font-medium"
                   >
                     github.com/vid277
                   </a>
@@ -348,7 +348,7 @@ export default function HeroSection() {
                     href="https://www.linkedin.com/in/vidyootsenthil/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline"
+                    className="text-blue-700 hover:text-blue-800 underline font-medium"
                   >
                     linkedin.com/in/vidyootsenthil
                   </a>
@@ -359,21 +359,20 @@ export default function HeroSection() {
 
             {/* Navigation hint */}
             <div className="border-t border-gray-700 pt-3 sm:pt-4 mt-4 sm:mt-6">
-              <p className="text-gray-500 text-xs mb-2">
+              <p className="text-gray-600 text-xs mb-2 font-medium">
                 💡 Try these commands for focused views:
               </p>
-              <div className="text-gray-400 text-xs space-y-1">
+              <div className="text-gray-700 text-xs space-y-1">
                 <p className="flex flex-wrap gap-2">
-                  <span className="text-blue-400">work</span>
-                  <span className="text-yellow-400">projects</span>
-                  <span className="text-green-400">skills</span>
-                  <span className="text-purple-400">contact</span>
-                  <span className="text-orange-400">blogs</span>
-                  <span className="text-gray-400">help</span>
+                  <span className="text-blue-700 font-medium">work</span>
+                  <span className="text-yellow-600 font-medium">projects</span>
+                  <span className="text-green-700 font-medium">skills</span>
+                  <span className="text-purple-700 font-medium">contact</span>
+                  <span className="text-gray-700 font-medium">help</span>
                 </p>
               </div>
               {isClient && isMobile && (
-                <p className="text-gray-500 text-xs mt-2">
+                <p className="text-gray-600 text-xs mt-2 font-medium">
                   📱 Tap the command line above to type commands
                 </p>
               )}
@@ -384,22 +383,22 @@ export default function HeroSection() {
       case "home":
         return (
           <div>
-            <p className="text-green-500">$ whoami</p>
+            <p className="text-green-700 font-bold">$ whoami</p>
             <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-2">
               Vidyoot Senthil
             </h1>
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-600 mb-4">
               cs student @ georgia tech | full-stack engineer
             </p>
-            <div className="text-gray-300 space-y-1">
+            <div className="text-gray-800 space-y-1">
               <p>Available commands:</p>
-              <p className="text-blue-400">• work → View work experience</p>
-              <p className="text-yellow-400">• projects → View projects</p>
-              <p className="text-green-400">• skills → View technical skills</p>
-              <p className="text-purple-400">
+              <p className="text-blue-700">• work → View work experience</p>
+              <p className="text-yellow-600">• projects → View projects</p>
+              <p className="text-green-700">• skills → View technical skills</p>
+              <p className="text-purple-700">
                 • contact → View contact information
               </p>
-              <p className="text-gray-400">• help → Show this help</p>
+              <p className="text-gray-700">• help → Show this help</p>
             </div>
           </div>
         );
@@ -407,61 +406,63 @@ export default function HeroSection() {
       case "work":
         return (
           <div>
-            <p className="text-green-500 mb-3">$ cat work_experience.txt</p>
-            <div className="text-gray-300 space-y-3">
+            <p className="text-green-700 font-bold mb-3">
+              $ cat work_experience.txt
+            </p>
+            <div className="text-gray-800 space-y-3">
               <div>
-                <p className="text-blue-400">
+                <p className="text-blue-700 text-sm sm:text-base font-semibold">
                   • Software Developer, Trieve AI (YC W24) [2024-Present]
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Developing EMS powering 30k+ documentation websites
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Built API clients across Python, TypeScript, Java, .NET,
                   Ruby
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Delivered 35+ frontend/backend features for AI Search & RAG
                 </p>
               </div>
 
               <div>
-                <p className="text-blue-400">
+                <p className="text-blue-700 text-sm sm:text-base font-semibold">
                   • Software Engineering Intern, Caterpillar Inc. [Summer 2024]
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Created 3D ToF camera vision analytics for space
                   optimization
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Resolved 10+ BCD issues using Snowflake, SQL, SAP
                 </p>
               </div>
 
               <div>
-                <p className="text-blue-400">
+                <p className="text-blue-700 text-sm sm:text-base font-semibold">
                   • Software Engineering Intern, Caterpillar Inc. [Summer 2023]
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Built object detection model with 98.2% accuracy
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Presented safety monitoring solution to executives
                 </p>
               </div>
 
               <div>
-                <p className="text-blue-400">
+                <p className="text-blue-700 text-sm sm:text-base font-semibold">
                   • Student Researcher, University of Chicago [2022-2024]
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Engineered protein simulation tool: 6x speed, 3.2x storage
                   reduction
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Developed molecular dynamics libraries in Python, C++, R
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Presented to 300+ attendees at symposium
                 </p>
               </div>
@@ -472,22 +473,22 @@ export default function HeroSection() {
       case "projects":
         return (
           <div>
-            <p className="text-green-500 mb-3">$ ls projects/</p>
-            <div className="text-gray-300 space-y-3">
+            <p className="text-green-700 font-bold mb-3">$ ls projects/</p>
+            <div className="text-gray-800 space-y-3">
               <div>
-                <p className="text-yellow-400">
+                <p className="text-yellow-600 font-semibold">
                   • Trieve Librarian [Chrome Extension, 2024]
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Website scraping & semantic search for bookmarks
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   -{" "}
                   <a
                     href="https://chromewebstore.google.com/detail/trieve-librarian/lahoelkigecebpmgcfnkkmaaibccipal"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline"
+                    className="text-blue-700 hover:text-blue-800 underline font-medium"
                   >
                     Chrome Web Store
                   </a>{" "}
@@ -496,7 +497,7 @@ export default function HeroSection() {
                     href="https://github.com/devflowinc/trieve-librarian"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline"
+                    className="text-blue-700 hover:text-blue-800 underline font-medium"
                   >
                     GitHub
                   </a>
@@ -504,22 +505,22 @@ export default function HeroSection() {
               </div>
 
               <div>
-                <p className="text-yellow-400">
+                <p className="text-yellow-600 font-semibold">
                   • JHMC Testing Portal [Full-Stack, 2022-2024]
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Serves 500+ competitors annually for math contests
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Built with TypeScript, Node.js, Google Cloud
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   -{" "}
                   <a
                     href="https://github.com/vid277/jhmc-testing-portal"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline"
+                    className="text-blue-700 hover:text-blue-800 underline font-medium"
                   >
                     GitHub
                   </a>
@@ -527,19 +528,19 @@ export default function HeroSection() {
               </div>
 
               <div>
-                <p className="text-yellow-400">
+                <p className="text-yellow-600 font-semibold">
                   • Dynalab [Research Tool, 2022-2024]
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Cloud-based protein simulation using Python, C++
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   -{" "}
                   <a
                     href="https://github.com/vid277/dynalab"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline"
+                    className="text-blue-700 hover:text-blue-800 underline font-medium"
                   >
                     GitHub
                   </a>
@@ -547,19 +548,19 @@ export default function HeroSection() {
               </div>
 
               <div>
-                <p className="text-yellow-400">
+                <p className="text-yellow-600 font-semibold">
                   • Titran [Programming Language, 2023]
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Esoteric language with custom interpreter & compiler
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   -{" "}
                   <a
                     href="https://github.com/vid277/titran"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline"
+                    className="text-blue-700 hover:text-blue-800 underline font-medium"
                   >
                     GitHub
                   </a>
@@ -567,19 +568,19 @@ export default function HeroSection() {
               </div>
 
               <div>
-                <p className="text-yellow-400">
+                <p className="text-yellow-600 font-semibold">
                   • Embargo [Unity Game, 2022-2023]
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   - Team-built dungeon explorer game in C#
                 </p>
-                <p className="ml-4 text-sm">
+                <p className="ml-4 text-sm text-gray-700">
                   -{" "}
                   <a
                     href="https://github.com/vid277/embargo-game"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 underline"
+                    className="text-blue-700 hover:text-blue-800 underline font-medium"
                   >
                     GitHub
                   </a>
@@ -592,30 +593,30 @@ export default function HeroSection() {
       case "skills":
         return (
           <div>
-            <p className="text-green-500 mb-3">$ cat skills.txt</p>
+            <p className="text-green-700 font-bold mb-3">$ cat skills.txt</p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                 TypeScript
               </span>
-              <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                 Python
               </span>
-              <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                 Rust
               </span>
-              <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                 React
               </span>
-              <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                 Node.js
               </span>
-              <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                 C++
               </span>
-              <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                 Google Cloud
               </span>
-              <span className="px-3 py-1 bg-green-500/10 rounded-md border border-green-500/20 text-sm">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
                 SQL
               </span>
             </div>
@@ -625,13 +626,13 @@ export default function HeroSection() {
       case "contact":
         return (
           <div>
-            <p className="text-green-500 mb-3">$ contact --info</p>
-            <div className="text-gray-300 space-y-2">
+            <p className="text-green-700 font-bold mb-3">$ contact --info</p>
+            <div className="text-gray-800 space-y-2">
               <p>
                 • Email:{" "}
                 <a
                   href="mailto:vidyoots@gmail.com"
-                  className="text-blue-400 hover:text-blue-300 underline"
+                  className="text-blue-700 hover:text-blue-800 underline font-medium"
                 >
                   vidyoots@gmail.com
                 </a>
@@ -642,7 +643,7 @@ export default function HeroSection() {
                   href="https://github.com/vid277"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-400 hover:text-blue-300 underline"
+                  className="text-blue-700 hover:text-blue-800 underline font-medium"
                 >
                   github.com/vid277
                 </a>
@@ -653,7 +654,7 @@ export default function HeroSection() {
                   href="https://www.linkedin.com/in/vidyootsenthil/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-400 hover:text-blue-300 underline"
+                  className="text-blue-700 hover:text-blue-800 underline font-medium"
                 >
                   linkedin.com/in/vidyootsenthil
                 </a>
@@ -666,17 +667,17 @@ export default function HeroSection() {
       case "blogs":
         return (
           <div>
-            <p className="text-green-500 mb-3">$ ls blogs/</p>
-            <div className="text-gray-300 space-y-2">
+            <p className="text-green-700 font-bold mb-3">$ ls blogs/</p>
+            <div className="text-gray-800 space-y-2">
               {blogPosts.map((post) => (
                 <div key={post.slug}>
                   <a
                     href={`/blog/${post.slug}`}
-                    className="text-orange-400 hover:text-orange-300 underline"
+                    className="text-orange-700 hover:text-orange-800 underline font-medium"
                   >
                     • {post.title}
                   </a>
-                  <span className="ml-2 text-xs text-gray-500">
+                  <span className="ml-2 text-xs text-gray-600">
                     {post.date}
                   </span>
                 </div>
@@ -688,49 +689,49 @@ export default function HeroSection() {
       case "help":
         return (
           <div>
-            <p className="text-green-500 mb-3">$ help</p>
-            <div className="text-gray-300 space-y-1">
-              <p className="text-white font-bold">Available Commands:</p>
+            <p className="text-green-700 font-bold mb-3">$ help</p>
+            <div className="text-gray-800 space-y-1">
+              <p className="text-black font-bold">Available Commands:</p>
               <p>
-                <span className="text-green-400">all</span> /{" "}
-                <span className="text-green-400">overview</span> → View complete
+                <span className="text-green-700">all</span> /{" "}
+                <span className="text-green-700">overview</span> → View complete
                 portfolio
               </p>
               <p>
-                <span className="text-green-400">whoami</span> /{" "}
-                <span className="text-green-400">home</span> → Go to home screen
+                <span className="text-green-700">whoami</span> /{" "}
+                <span className="text-green-700">home</span> → Go to home screen
               </p>
               <p>
-                <span className="text-blue-400">work</span> /{" "}
-                <span className="text-blue-400">cat work_experience.txt</span> →
+                <span className="text-blue-700">work</span> /{" "}
+                <span className="text-blue-700">cat work_experience.txt</span> →
                 View work experience
               </p>
               <p>
-                <span className="text-yellow-400">projects</span> /{" "}
-                <span className="text-yellow-400">ls projects/</span> → View
+                <span className="text-yellow-600">projects</span> /{" "}
+                <span className="text-yellow-600">ls projects/</span> → View
                 projects
               </p>
               <p>
-                <span className="text-green-400">skills</span> /{" "}
-                <span className="text-green-400">cat skills.txt</span> → View
+                <span className="text-green-700">skills</span> /{" "}
+                <span className="text-green-700">cat skills.txt</span> → View
                 technical skills
               </p>
               <p>
-                <span className="text-purple-400">contact</span> /{" "}
-                <span className="text-purple-400">contact --info</span> → View
+                <span className="text-purple-700">contact</span> /{" "}
+                <span className="text-purple-700">contact --info</span> → View
                 contact info
               </p>
               <p>
-                <span className="text-orange-400">blogs</span> /{" "}
-                <span className="text-orange-400">ls blogs/</span> → View blog
+                <span className="text-orange-700">blogs</span> /{" "}
+                <span className="text-orange-700">ls blogs/</span> → View blog
                 posts
               </p>
               <p>
-                <span className="text-gray-400">clear</span> → Clear screen (go
+                <span className="text-gray-700">clear</span> → Clear screen (go
                 to home)
               </p>
               <p>
-                <span className="text-gray-400">help</span> → Show this help
+                <span className="text-gray-700">help</span> → Show this help
               </p>
             </div>
           </div>
@@ -742,11 +743,8 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-start sm:items-center justify-center p-2 sm:p-4 md:p-8 pt-4 sm:pt-2">
-      <div className="absolute inset-0 bg-gradient-to-r from-green-600/20 to-blue-600/20 opacity-10" />
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-      </div>
+    <section className="relative min-h-screen flex items-start sm:items-center justify-center p-2 sm:p-4 md:p-8 pt-4 sm:pt-2 bg-gradient-to-br from-[#fdfcf8] via-[#f7f5ef] to-[#faf8f3]">
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30" />
 
       <div className="relative z-10 w-full max-w-5xl">
         <motion.div
@@ -766,23 +764,23 @@ export default function HeroSection() {
           onDragStart={() => setIsDragging(true)}
           onDragEnd={() => setIsDragging(false)}
           dragListener={false}
-          className="bg-black/50 backdrop-blur-lg rounded-lg border border-gray-800 shadow-2xl w-full max-w-5xl mx-auto min-h-[85vh] sm:min-h-0"
+          className="bg-gray-50 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 w-full max-w-5xl mx-auto min-h-[85vh] sm:min-h-0"
         >
           <div
             onPointerDown={(e) =>
               isClient && !isMobile && dragControls.start(e)
             }
-            className={`flex items-center justify-between p-3 sm:p-4 border-b border-gray-800 ${
+            className={`flex items-center justify-between p-3 sm:p-4 border-b-4 border-black bg-gray-200 ${
               isClient &&
               !isMobile &&
               (isDragging ? "cursor-grabbing" : "cursor-grab")
             }`}
           >
             <div className="flex items-center gap-2">
-              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500 hover:bg-red-400 transition-colors" />
-              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500 hover:bg-yellow-400 transition-colors" />
-              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500 hover:bg-green-400 transition-colors" />
-              <span className="ml-2 sm:ml-4 text-gray-400 text-xs sm:text-sm font-mono">
+              <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-red-500 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all duration-150" />
+              <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-yellow-500 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all duration-150" />
+              <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-green-500 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all duration-150" />
+              <span className="ml-3 sm:ml-4 text-gray-800 text-xs sm:text-sm font-mono font-bold">
                 vidyoot@portfolio:~$
               </span>
             </div>
@@ -793,11 +791,11 @@ export default function HeroSection() {
                 href="https://github.com/vid277"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-1.5 sm:p-2 rounded-md bg-gray-800/50 hover:bg-gray-700/70 border border-gray-700 hover:border-gray-600 transition-all duration-200 group"
+                className="p-2 sm:p-3 bg-gray-50 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transform-gpu transition-all duration-300 ease-out hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1.5 hover:-translate-y-1.5 group"
                 title="GitHub"
               >
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-white transition-colors"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-800 group-hover:text-black transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -809,11 +807,11 @@ export default function HeroSection() {
                 href="https://www.linkedin.com/in/vidyootsenthil/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-1.5 sm:p-2 rounded-md bg-gray-800/50 hover:bg-gray-700/70 border border-gray-700 hover:border-gray-600 transition-all duration-200 group"
+                className="p-2 sm:p-3 bg-gray-50 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-150 group"
                 title="LinkedIn"
               >
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-white transition-colors"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-800 group-hover:text-black transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -823,11 +821,11 @@ export default function HeroSection() {
 
               <a
                 href="mailto:vidyoots@gmail.com"
-                className="p-1.5 sm:p-2 rounded-md bg-gray-800/50 hover:bg-gray-700/70 border border-gray-700 hover:border-gray-600 transition-all duration-200 group"
+                className="p-2 sm:p-3 bg-gray-50 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-150 group"
                 title="Email"
               >
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-white transition-colors"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-800 group-hover:text-black transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -837,11 +835,11 @@ export default function HeroSection() {
 
               <a
                 href="/blog"
-                className="p-1.5 sm:p-2 rounded-md bg-gray-800/50 hover:bg-gray-700/70 border border-gray-700 hover:border-gray-600 transition-all duration-200 group"
+                className="p-2 sm:p-3 bg-gray-50 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-150 group"
                 title="Blog"
               >
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 group-hover:text-white transition-colors"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-800 group-hover:text-black transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -851,15 +849,15 @@ export default function HeroSection() {
               </a>
             </div>
           </div>
-          <div className="p-3 sm:p-6 min-h-[80vh] sm:min-h-[70vh] max-h-[85vh] sm:max-h-[80vh] flex flex-col">
-            <div className="flex-1 font-mono text-xs sm:text-sm mb-3 sm:mb-4 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600">
+          <div className="p-3 sm:p-6 min-h-[80vh] sm:min-h-[70vh] max-h-[85vh] sm:max-h-[80vh] flex flex-col bg-gray-50">
+            <div className="flex-1 font-mono text-xs sm:text-sm mb-3 sm:mb-4 overflow-y-auto scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-400">
               {renderContent()}
             </div>
 
             <div className="flex-shrink-0 mb-3 sm:mb-4">
-              <div className="font-mono text-xs sm:text-sm space-y-1 max-h-16 sm:max-h-24 overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600">
+              <div className="font-mono text-xs sm:text-sm space-y-1 max-h-16 sm:max-h-24 overflow-y-auto scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-400">
                 {commandHistory.slice(-4).map((cmd, index) => (
-                  <p key={index} className="text-gray-400 text-xs break-words">
+                  <p key={index} className="text-gray-700 text-xs break-words">
                     {cmd}
                   </p>
                 ))}
@@ -867,9 +865,9 @@ export default function HeroSection() {
             </div>
 
             <div
-              className={`flex-shrink-0 flex items-center font-mono text-xs sm:text-sm border-t border-gray-700 pt-3 sm:pt-4 ${
+              className={`flex-shrink-0 flex items-center font-mono text-xs sm:text-sm border-t-2 border-black pt-3 sm:pt-4 bg-gray-100 ${
                 isClient && isMobile
-                  ? "bg-gray-800/30 rounded-b-lg px-2 py-2 cursor-pointer active:bg-gray-700/40"
+                  ? "bg-gray-200 rounded-b-lg px-2 py-2 cursor-pointer active:bg-gray-300"
                   : ""
               }`}
               onClick={() => {
@@ -885,7 +883,7 @@ export default function HeroSection() {
                 }
               }}
             >
-              <span className="text-green-500 mr-1 sm:mr-2 flex-shrink-0 text-xs sm:text-sm">
+              <span className="text-green-700 mr-1 sm:mr-2 flex-shrink-0 text-xs sm:text-sm font-bold">
                 vidyoot@portfolio:~$
               </span>
               <input
@@ -908,7 +906,7 @@ export default function HeroSection() {
                     });
                   }
                 }}
-                className="flex-1 bg-transparent text-white outline-none min-w-0 text-xs sm:text-sm touch-manipulation"
+                className="flex-1 bg-transparent text-gray-900 outline-none min-w-0 text-xs sm:text-sm touch-manipulation font-bold"
                 placeholder={
                   isClient && isMobile
                     ? "Tap here to type..."
