@@ -1,16 +1,15 @@
 "use client";
 
-import { motion, useDragControls } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 
 export default function HeroSection() {
-  const [isDragging, setIsDragging] = useState(false);
   const [currentView, setCurrentView] = useState("all");
   const [command, setCommand] = useState("");
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [isMobile, setIsMobile] = useState(false);
   const [isClient, setIsClient] = useState(false);
-  const dragControls = useDragControls();
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Blog posts metadata (add new posts here)
@@ -72,10 +71,10 @@ export default function HeroSection() {
   };
 
   useEffect(() => {
-    if (inputRef.current && !isDragging && !isMobile) {
+    if (inputRef.current && !isMobile) {
       inputRef.current.focus();
     }
-  }, [isDragging, currentView, isMobile]);
+  }, [currentView, isMobile]);
 
   useEffect(() => {
     setIsClient(true);
@@ -90,82 +89,89 @@ export default function HeroSection() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Additional effect to ensure mobile detection is current
+  useEffect(() => {
+    if (isClient) {
+      setIsMobile(window.innerWidth < 768);
+    }
+  }, [currentView, isClient]);
+
   const renderContent = () => {
     switch (currentView) {
       case "all":
         return (
           <div className="space-y-6">
             <div>
-              <p className="text-green-700 font-bold">$ whoami</p>
-              <h1 className="text-xl sm:text-2xl md:text-4xl font-bold mt-2 mb-2">
+              <p className="text-green-700 font-bold text-sm">$ whoami</p>
+              <h1 className="text-xl sm:text-2xl md:text-4xl font-bold mt-2 mb-2 text-black">
                 Vidyoot Senthil
               </h1>
-              <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">
+              <p className="text-gray-800 mb-3 sm:mb-4 text-sm">
                 cs student @ georgia tech | full-stack engineer
               </p>
             </div>
 
             <div>
-              <p className="text-green-700 font-bold mb-2 sm:mb-3">
+              <p className="text-green-700 font-bold mb-2 sm:mb-3 text-sm">
                 $ cat work_experience.txt
               </p>
               <div className="text-gray-800 space-y-2 sm:space-y-3">
                 <div>
-                  <p className="text-blue-700 text-sm sm:text-base font-semibold">
+                  <p className="text-blue-700 text-sm font-semibold">
                     • Software Developer, Trieve AI (YC W24) [2024-Present]
                   </p>
-                  <p className="ml-3 sm:ml-4 text-xs sm:text-sm text-gray-700">
+                  <p className="ml-3 sm:ml-4 text-xs text-gray-700">
                     - Developing EMS powering 30k+ documentation websites
                   </p>
-                  <p className="ml-3 sm:ml-4 text-xs sm:text-sm text-gray-700">
+                  <p className="ml-3 sm:ml-4 text-xs text-gray-700">
                     - Built API clients across Python, TypeScript, Java, .NET,
                     Ruby
                   </p>
-                  <p className="ml-3 sm:ml-4 text-xs sm:text-sm text-gray-700">
+                  <p className="ml-3 sm:ml-4 text-xs text-gray-700">
                     - Delivered 35+ frontend/backend features for AI Search &
                     RAG
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-blue-700 font-semibold">
+                  <p className="text-blue-700 text-sm font-semibold">
                     • Software Engineering Intern, Caterpillar Inc. [Summer
                     2024]
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     - Created 3D ToF camera vision analytics for space
                     optimization
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     - Resolved 10+ BCD issues using Snowflake, SQL, SAP
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-blue-700 font-semibold">
+                  <p className="text-blue-700 text-sm font-semibold">
                     • Software Engineering Intern, Caterpillar Inc. [Summer
                     2023]
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     - Built object detection model with 98.2% accuracy
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     - Presented safety monitoring solution to executives
                   </p>
                 </div>
 
                 <div>
-                  <p className="text-blue-700 font-semibold">
+                  <p className="text-blue-700 text-sm font-semibold">
                     • Student Researcher, University of Chicago [2022-2024]
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     - Engineered protein simulation tool: 6x speed, 3.2x storage
                     reduction
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     - Developed molecular dynamics libraries in Python, C++, R
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     - Presented to 300+ attendees at symposium
                   </p>
                 </div>
@@ -173,16 +179,18 @@ export default function HeroSection() {
             </div>
 
             <div>
-              <p className="text-green-700 font-bold mb-3">$ ls projects/</p>
+              <p className="text-green-700 font-bold mb-3 text-sm">
+                $ ls projects/
+              </p>
               <div className="text-gray-800 space-y-3">
                 <div>
-                  <p className="text-yellow-600 font-semibold">
+                  <p className="text-yellow-600 text-sm font-semibold">
                     • Trieve Librarian [Chrome Extension, 2024]
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     - Website scraping & semantic search for bookmarks
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     -{" "}
                     <a
                       href="https://chromewebstore.google.com/detail/trieve-librarian/lahoelkigecebpmgcfnkkmaaibccipal"
@@ -205,16 +213,16 @@ export default function HeroSection() {
                 </div>
 
                 <div>
-                  <p className="text-yellow-600 font-semibold">
+                  <p className="text-yellow-600 text-sm font-semibold">
                     • JHMC Testing Portal [Full-Stack, 2022-2024]
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     - Serves 500+ competitors annually for math contests
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     - Built with TypeScript, Node.js, Google Cloud
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     -{" "}
                     <a
                       href="https://github.com/vid277/jhmc-testing-portal"
@@ -228,13 +236,13 @@ export default function HeroSection() {
                 </div>
 
                 <div>
-                  <p className="text-yellow-600 font-semibold">
+                  <p className="text-yellow-600 text-sm font-semibold">
                     • Dynalab [Research Tool, 2022-2024]
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     - Cloud-based protein simulation using Python, C++
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     -{" "}
                     <a
                       href="https://github.com/vid277/dynalab"
@@ -248,13 +256,13 @@ export default function HeroSection() {
                 </div>
 
                 <div>
-                  <p className="text-yellow-600 font-semibold">
+                  <p className="text-yellow-600 text-sm font-semibold">
                     • Titran [Programming Language, 2023]
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     - Esoteric language with custom interpreter & compiler
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     -{" "}
                     <a
                       href="https://github.com/vid277/titran"
@@ -268,13 +276,13 @@ export default function HeroSection() {
                 </div>
 
                 <div>
-                  <p className="text-yellow-600 font-semibold">
+                  <p className="text-yellow-600 text-sm font-semibold">
                     • Embargo [Unity Game, 2022-2023]
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     - Team-built dungeon explorer game in C#
                   </p>
-                  <p className="ml-4 text-sm text-gray-700">
+                  <p className="ml-4 text-xs text-gray-700">
                     -{" "}
                     <a
                       href="https://github.com/vid277/embargo-game"
@@ -290,39 +298,43 @@ export default function HeroSection() {
             </div>
 
             <div>
-              <p className="text-green-700 font-bold mb-3">$ cat skills.txt</p>
+              <p className="text-green-700 font-bold mb-3 text-sm">
+                $ cat skills.txt
+              </p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                   TypeScript
                 </span>
-                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                   Python
                 </span>
-                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                   Rust
                 </span>
-                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                   React
                 </span>
-                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                   Node.js
                 </span>
-                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                   C++
                 </span>
-                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                   Google Cloud
                 </span>
-                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+                <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                   SQL
                 </span>
               </div>
             </div>
 
             <div>
-              <p className="text-green-700 font-bold mb-3">$ contact --info</p>
+              <p className="text-green-700 font-bold mb-3 text-sm">
+                $ contact --info
+              </p>
               <div className="text-gray-800 space-y-2">
-                <p>
+                <p className="text-sm">
                   • Email:{" "}
                   <a
                     href="mailto:vidyoots@gmail.com"
@@ -331,7 +343,7 @@ export default function HeroSection() {
                     vidyoots@gmail.com
                   </a>
                 </p>
-                <p>
+                <p className="text-sm">
                   • GitHub:{" "}
                   <a
                     href="https://github.com/vid277"
@@ -342,7 +354,7 @@ export default function HeroSection() {
                     github.com/vid277
                   </a>
                 </p>
-                <p>
+                <p className="text-sm">
                   • LinkedIn:{" "}
                   <a
                     href="https://www.linkedin.com/in/vidyootsenthil/"
@@ -353,28 +365,82 @@ export default function HeroSection() {
                     linkedin.com/in/vidyootsenthil
                   </a>
                 </p>
-                <p>• Location: Atlanta, GA</p>
+                <p className="text-sm">• Location: Atlanta, GA</p>
               </div>
             </div>
 
             {/* Navigation hint */}
             <div className="border-t border-gray-700 pt-3 sm:pt-4 mt-4 sm:mt-6">
-              <p className="text-gray-600 text-xs mb-2 font-medium">
-                💡 Try these commands for focused views:
-              </p>
-              <div className="text-gray-700 text-xs space-y-1">
-                <p className="flex flex-wrap gap-2">
-                  <span className="text-blue-700 font-medium">work</span>
-                  <span className="text-yellow-600 font-medium">projects</span>
-                  <span className="text-green-700 font-medium">skills</span>
-                  <span className="text-purple-700 font-medium">contact</span>
-                  <span className="text-gray-700 font-medium">help</span>
-                </p>
-              </div>
-              {isClient && isMobile && (
-                <p className="text-gray-600 text-xs mt-2 font-medium">
-                  📱 Tap the command line above to type commands
-                </p>
+              {isClient && isMobile ? (
+                <div className="flex flex-wrap gap-1.5">
+                  {currentView !== "all" && (
+                    <button
+                      onClick={() => handleCommand("all")}
+                      className="px-2 py-1 bg-black border border-black text-white text-xs font-medium rounded hover:bg-gray-800 transition-colors"
+                    >
+                      home
+                    </button>
+                  )}
+                  <button
+                    onClick={() => handleCommand("work")}
+                    className="px-2 py-1 bg-blue-100 border border-blue-600 text-blue-800 text-xs font-medium rounded hover:bg-blue-200 transition-colors"
+                  >
+                    work
+                  </button>
+                  <button
+                    onClick={() => handleCommand("projects")}
+                    className="px-2 py-1 bg-yellow-100 border border-yellow-600 text-yellow-800 text-xs font-medium rounded hover:bg-yellow-200 transition-colors"
+                  >
+                    projects
+                  </button>
+                  <button
+                    onClick={() => handleCommand("skills")}
+                    className="px-2 py-1 bg-green-100 border border-green-600 text-green-800 text-xs font-medium rounded hover:bg-green-200 transition-colors"
+                  >
+                    skills
+                  </button>
+                  <button
+                    onClick={() => handleCommand("contact")}
+                    className="px-2 py-1 bg-purple-100 border border-purple-600 text-purple-800 text-xs font-medium rounded hover:bg-purple-200 transition-colors"
+                  >
+                    contact
+                  </button>
+                  <button
+                    onClick={() => handleCommand("blogs")}
+                    className="px-2 py-1 bg-orange-100 border border-orange-600 text-orange-800 text-xs font-medium rounded hover:bg-orange-200 transition-colors"
+                  >
+                    blogs
+                  </button>
+                  {currentView !== "all" && (
+                    <button
+                      onClick={() => handleCommand("clear")}
+                      className="px-2 py-1 bg-red-100 border border-red-600 text-red-800 text-xs font-medium rounded hover:bg-red-200 transition-colors"
+                    >
+                      clear
+                    </button>
+                  )}
+                </div>
+              ) : (
+                <>
+                  <p className="text-gray-600 text-sm mb-2 font-medium">
+                    Try these commands for focused views:
+                  </p>
+                  <div className="text-gray-700 text-sm space-y-1">
+                    <p className="flex flex-wrap gap-2">
+                      <span className="text-blue-700 font-medium">work</span>|{" "}
+                      <span className="text-yellow-600 font-medium">
+                        projects
+                      </span>{" "}
+                      |{" "}
+                      <span className="text-green-700 font-medium">skills</span>{" "}
+                      |{" "}
+                      <span className="text-purple-700 font-medium">
+                        contact
+                      </span>{" "}
+                      | <span className="text-gray-700 font-medium">help</span>
+                    </p>
+                  </div>
+                </>
               )}
             </div>
           </div>
@@ -383,22 +449,28 @@ export default function HeroSection() {
       case "home":
         return (
           <div>
-            <p className="text-green-700 font-bold">$ whoami</p>
-            <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-2">
+            <p className="text-green-700 font-bold text-sm">$ whoami</p>
+            <h1 className="text-3xl md:text-4xl font-bold mt-2 mb-2 text-black">
               Vidyoot Senthil
             </h1>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-800 mb-4 text-sm">
               cs student @ georgia tech | full-stack engineer
             </p>
             <div className="text-gray-800 space-y-1">
-              <p>Available commands:</p>
-              <p className="text-blue-700">• work → View work experience</p>
-              <p className="text-yellow-600">• projects → View projects</p>
-              <p className="text-green-700">• skills → View technical skills</p>
-              <p className="text-purple-700">
+              <p className="text-sm">Available commands:</p>
+              <p className="text-blue-700 text-sm">
+                • work → View work experience
+              </p>
+              <p className="text-yellow-600 text-sm">
+                • projects → View projects
+              </p>
+              <p className="text-green-700 text-sm">
+                • skills → View technical skills
+              </p>
+              <p className="text-purple-700 text-sm">
                 • contact → View contact information
               </p>
-              <p className="text-gray-700">• help → Show this help</p>
+              <p className="text-gray-700 text-sm">• help → Show this help</p>
             </div>
           </div>
         );
@@ -406,63 +478,63 @@ export default function HeroSection() {
       case "work":
         return (
           <div>
-            <p className="text-green-700 font-bold mb-3">
+            <p className="text-green-700 font-bold mb-3 text-sm">
               $ cat work_experience.txt
             </p>
             <div className="text-gray-800 space-y-3">
               <div>
-                <p className="text-blue-700 text-sm sm:text-base font-semibold">
+                <p className="text-blue-700 text-sm font-semibold">
                   • Software Developer, Trieve AI (YC W24) [2024-Present]
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Developing EMS powering 30k+ documentation websites
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Built API clients across Python, TypeScript, Java, .NET,
                   Ruby
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Delivered 35+ frontend/backend features for AI Search & RAG
                 </p>
               </div>
 
               <div>
-                <p className="text-blue-700 text-sm sm:text-base font-semibold">
+                <p className="text-blue-700 text-sm font-semibold">
                   • Software Engineering Intern, Caterpillar Inc. [Summer 2024]
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Created 3D ToF camera vision analytics for space
                   optimization
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Resolved 10+ BCD issues using Snowflake, SQL, SAP
                 </p>
               </div>
 
               <div>
-                <p className="text-blue-700 text-sm sm:text-base font-semibold">
+                <p className="text-blue-700 text-sm font-semibold">
                   • Software Engineering Intern, Caterpillar Inc. [Summer 2023]
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Built object detection model with 98.2% accuracy
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Presented safety monitoring solution to executives
                 </p>
               </div>
 
               <div>
-                <p className="text-blue-700 text-sm sm:text-base font-semibold">
+                <p className="text-blue-700 text-sm font-semibold">
                   • Student Researcher, University of Chicago [2022-2024]
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Engineered protein simulation tool: 6x speed, 3.2x storage
                   reduction
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Developed molecular dynamics libraries in Python, C++, R
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Presented to 300+ attendees at symposium
                 </p>
               </div>
@@ -473,16 +545,18 @@ export default function HeroSection() {
       case "projects":
         return (
           <div>
-            <p className="text-green-700 font-bold mb-3">$ ls projects/</p>
+            <p className="text-green-700 font-bold mb-3 text-sm">
+              $ ls projects/
+            </p>
             <div className="text-gray-800 space-y-3">
               <div>
-                <p className="text-yellow-600 font-semibold">
+                <p className="text-yellow-600 text-sm font-semibold">
                   • Trieve Librarian [Chrome Extension, 2024]
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Website scraping & semantic search for bookmarks
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   -{" "}
                   <a
                     href="https://chromewebstore.google.com/detail/trieve-librarian/lahoelkigecebpmgcfnkkmaaibccipal"
@@ -505,16 +579,16 @@ export default function HeroSection() {
               </div>
 
               <div>
-                <p className="text-yellow-600 font-semibold">
+                <p className="text-yellow-600 text-sm font-semibold">
                   • JHMC Testing Portal [Full-Stack, 2022-2024]
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Serves 500+ competitors annually for math contests
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Built with TypeScript, Node.js, Google Cloud
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   -{" "}
                   <a
                     href="https://github.com/vid277/jhmc-testing-portal"
@@ -528,13 +602,13 @@ export default function HeroSection() {
               </div>
 
               <div>
-                <p className="text-yellow-600 font-semibold">
+                <p className="text-yellow-600 text-sm font-semibold">
                   • Dynalab [Research Tool, 2022-2024]
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Cloud-based protein simulation using Python, C++
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   -{" "}
                   <a
                     href="https://github.com/vid277/dynalab"
@@ -548,13 +622,13 @@ export default function HeroSection() {
               </div>
 
               <div>
-                <p className="text-yellow-600 font-semibold">
+                <p className="text-yellow-600 text-sm font-semibold">
                   • Titran [Programming Language, 2023]
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Esoteric language with custom interpreter & compiler
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   -{" "}
                   <a
                     href="https://github.com/vid277/titran"
@@ -568,13 +642,13 @@ export default function HeroSection() {
               </div>
 
               <div>
-                <p className="text-yellow-600 font-semibold">
+                <p className="text-yellow-600 text-sm font-semibold">
                   • Embargo [Unity Game, 2022-2023]
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   - Team-built dungeon explorer game in C#
                 </p>
-                <p className="ml-4 text-sm text-gray-700">
+                <p className="ml-4 text-xs text-gray-700">
                   -{" "}
                   <a
                     href="https://github.com/vid277/embargo-game"
@@ -593,30 +667,32 @@ export default function HeroSection() {
       case "skills":
         return (
           <div>
-            <p className="text-green-700 font-bold mb-3">$ cat skills.txt</p>
+            <p className="text-green-700 font-bold mb-3 text-sm">
+              $ cat skills.txt
+            </p>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                 TypeScript
               </span>
-              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                 Python
               </span>
-              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                 Rust
               </span>
-              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                 React
               </span>
-              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                 Node.js
               </span>
-              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                 C++
               </span>
-              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                 Google Cloud
               </span>
-              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-sm font-medium text-green-800">
+              <span className="px-3 py-1 bg-green-100 rounded-md border-2 border-green-600 text-xs font-medium text-green-800 flex justify-center items-center">
                 SQL
               </span>
             </div>
@@ -626,9 +702,11 @@ export default function HeroSection() {
       case "contact":
         return (
           <div>
-            <p className="text-green-700 font-bold mb-3">$ contact --info</p>
+            <p className="text-green-700 font-bold mb-3 text-sm">
+              $ contact --info
+            </p>
             <div className="text-gray-800 space-y-2">
-              <p>
+              <p className="text-sm">
                 • Email:{" "}
                 <a
                   href="mailto:vidyoots@gmail.com"
@@ -637,7 +715,7 @@ export default function HeroSection() {
                   vidyoots@gmail.com
                 </a>
               </p>
-              <p>
+              <p className="text-sm">
                 • GitHub:{" "}
                 <a
                   href="https://github.com/vid277"
@@ -648,7 +726,7 @@ export default function HeroSection() {
                   github.com/vid277
                 </a>
               </p>
-              <p>
+              <p className="text-sm">
                 • LinkedIn:{" "}
                 <a
                   href="https://www.linkedin.com/in/vidyootsenthil/"
@@ -659,7 +737,7 @@ export default function HeroSection() {
                   linkedin.com/in/vidyootsenthil
                 </a>
               </p>
-              <p>• Location: Atlanta, GA</p>
+              <p className="text-sm">• Location: Atlanta, GA</p>
             </div>
           </div>
         );
@@ -667,13 +745,13 @@ export default function HeroSection() {
       case "blogs":
         return (
           <div>
-            <p className="text-green-700 font-bold mb-3">$ ls blogs/</p>
+            <p className="text-green-700 font-bold mb-3 text-sm">$ ls blogs/</p>
             <div className="text-gray-800 space-y-2">
               {blogPosts.map((post) => (
                 <div key={post.slug}>
                   <a
                     href={`/blog/${post.slug}`}
-                    className="text-orange-700 hover:text-orange-800 underline font-medium"
+                    className="text-orange-700 hover:text-orange-800 underline font-medium text-sm"
                   >
                     • {post.title}
                   </a>
@@ -689,48 +767,50 @@ export default function HeroSection() {
       case "help":
         return (
           <div>
-            <p className="text-green-700 font-bold mb-3">$ help</p>
+            <p className="text-green-700 font-bold mb-3 text-sm">$ help</p>
             <div className="text-gray-800 space-y-1">
-              <p className="text-black font-bold">Available Commands:</p>
-              <p>
+              <p className="text-black font-bold text-sm">
+                Available Commands:
+              </p>
+              <p className="text-sm">
                 <span className="text-green-700">all</span> /{" "}
                 <span className="text-green-700">overview</span> → View complete
                 portfolio
               </p>
-              <p>
+              <p className="text-sm">
                 <span className="text-green-700">whoami</span> /{" "}
                 <span className="text-green-700">home</span> → Go to home screen
               </p>
-              <p>
+              <p className="text-sm">
                 <span className="text-blue-700">work</span> /{" "}
                 <span className="text-blue-700">cat work_experience.txt</span> →
                 View work experience
               </p>
-              <p>
+              <p className="text-sm">
                 <span className="text-yellow-600">projects</span> /{" "}
                 <span className="text-yellow-600">ls projects/</span> → View
                 projects
               </p>
-              <p>
+              <p className="text-sm">
                 <span className="text-green-700">skills</span> /{" "}
                 <span className="text-green-700">cat skills.txt</span> → View
                 technical skills
               </p>
-              <p>
+              <p className="text-sm">
                 <span className="text-purple-700">contact</span> /{" "}
                 <span className="text-purple-700">contact --info</span> → View
                 contact info
               </p>
-              <p>
+              <p className="text-sm">
                 <span className="text-orange-700">blogs</span> /{" "}
                 <span className="text-orange-700">ls blogs/</span> → View blog
                 posts
               </p>
-              <p>
+              <p className="text-sm">
                 <span className="text-gray-700">clear</span> → Clear screen (go
                 to home)
               </p>
-              <p>
+              <p className="text-sm">
                 <span className="text-gray-700">help</span> → Show this help
               </p>
             </div>
@@ -743,59 +823,42 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-start sm:items-center justify-center p-2 sm:p-4 md:p-8 pt-4 sm:pt-2 bg-gradient-to-br from-[#fdfcf8] via-[#f7f5ef] to-[#faf8f3]">
+    <section className="relative min-h-screen flex items-start sm:items-center justify-center p-4 pt-8 sm:p-4 md:p-8 bg-gradient-to-br from-[#fdfcf8] via-[#f7f5ef] to-[#faf8f3]">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%239C92AC%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30" />
 
-      <div className="relative z-10 w-full max-w-5xl">
+      <div className="relative z-10 w-full max-w-7xl">
         <motion.div
-          drag={isClient && !isMobile}
-          dragControls={dragControls}
-          dragMomentum={false}
-          dragElastic={0.1}
-          dragConstraints={{
-            top: -100,
-            left: -100,
-            right: 100,
-            bottom: 100,
-          }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          onDragStart={() => setIsDragging(true)}
-          onDragEnd={() => setIsDragging(false)}
           dragListener={false}
-          className="bg-gray-50 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 w-full max-w-5xl mx-auto min-h-[85vh] sm:min-h-0"
+          className="bg-gray-100 border-4 border-black shadow-none sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none sm:hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 w-full max-w-7xl mx-auto min-h-[85vh] sm:min-h-0"
         >
           <div
-            onPointerDown={(e) =>
-              isClient && !isMobile && dragControls.start(e)
-            }
             className={`flex items-center justify-between p-3 sm:p-4 border-b-4 border-black bg-gray-200 ${
-              isClient &&
-              !isMobile &&
-              (isDragging ? "cursor-grabbing" : "cursor-grab")
+              isClient && !isMobile
             }`}
           >
             <div className="flex items-center gap-2">
               <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-red-500 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all duration-150" />
               <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-yellow-500 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all duration-150" />
               <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-green-500 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all duration-150" />
-              <span className="ml-3 sm:ml-4 text-gray-800 text-xs sm:text-sm font-mono font-bold">
+              <span className="ml-2 sm:ml-4 text-gray-800 text-xs sm:text-sm font-mono font-bold">
                 vidyoot@portfolio:~$
               </span>
             </div>
 
             {/* Social Media Icons */}
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-1 sm:gap-3">
               <a
                 href="https://github.com/vid277"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 sm:p-3 bg-gray-50 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transform-gpu transition-all duration-300 ease-out hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1.5 hover:-translate-y-1.5 group"
+                className="p-1.5 sm:p-3 bg-gray-100 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transform-gpu transition-all duration-300 ease-out hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1.5 hover:-translate-y-1.5 group"
                 title="GitHub"
               >
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-800 group-hover:text-black transition-colors"
+                  className="w-3 h-3 sm:w-5 sm:h-5 text-gray-800 group-hover:text-black transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -807,11 +870,11 @@ export default function HeroSection() {
                 href="https://www.linkedin.com/in/vidyootsenthil/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 sm:p-3 bg-gray-50 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-150 group"
+                className="p-1.5 sm:p-3 bg-gray-100 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-150 group"
                 title="LinkedIn"
               >
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-800 group-hover:text-black transition-colors"
+                  className="w-3 h-3 sm:w-5 sm:h-5 text-[#0077B5] group-hover:text-[#005885] transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -821,11 +884,11 @@ export default function HeroSection() {
 
               <a
                 href="mailto:vidyoots@gmail.com"
-                className="p-2 sm:p-3 bg-gray-50 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-150 group"
+                className="p-1.5 sm:p-3 bg-gray-100 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-150 group"
                 title="Email"
               >
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-800 group-hover:text-black transition-colors"
+                  className="w-3 h-3 sm:w-5 sm:h-5 text-[#EA4335] group-hover:text-[#D32F2F] transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -833,29 +896,29 @@ export default function HeroSection() {
                 </svg>
               </a>
 
-              <a
+              <Link
                 href="/blog"
-                className="p-2 sm:p-3 bg-gray-50 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-150 group"
+                className="p-1.5 sm:p-3 bg-gray-100 border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-1 hover:-translate-y-1 transition-all duration-150 group"
                 title="Blog"
               >
                 <svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 text-gray-800 group-hover:text-black transition-colors"
+                  className="w-3 h-3 sm:w-5 sm:h-5 text-[#FF6B35] group-hover:text-[#E55A2B] transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" />
                   <path d="M7 7h10v2H7zM7 11h10v2H7zM7 15h7v2H7z" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
-          <div className="p-3 sm:p-6 min-h-[80vh] sm:min-h-[70vh] max-h-[85vh] sm:max-h-[80vh] flex flex-col bg-gray-50">
-            <div className="flex-1 font-mono text-xs sm:text-sm mb-3 sm:mb-4 overflow-y-auto scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-400">
+          <div className="p-3 sm:p-6 min-h-[80vh] sm:min-h-[70vh] max-h-[85vh] sm:max-h-[80vh] flex flex-col bg-gray-100">
+            <div className="flex-1 font-mono text-xs sm:text-sm mb-3 sm:mb-4 overflow-y-auto sm:scrollbar-thin sm:scrollbar-track-gray-200 sm:scrollbar-thumb-gray-400">
               {renderContent()}
             </div>
 
             <div className="flex-shrink-0 mb-3 sm:mb-4">
-              <div className="font-mono text-xs sm:text-sm space-y-1 max-h-16 sm:max-h-24 overflow-y-auto scrollbar-thin scrollbar-track-gray-200 scrollbar-thumb-gray-400">
+              <div className="font-mono text-xs sm:text-sm space-y-1 max-h-16 sm:max-h-24 overflow-y-auto sm:scrollbar-thin sm:scrollbar-track-gray-200 sm:scrollbar-thumb-gray-400">
                 {commandHistory.slice(-4).map((cmd, index) => (
                   <p key={index} className="text-gray-700 text-xs break-words">
                     {cmd}
