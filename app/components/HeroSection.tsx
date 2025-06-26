@@ -12,17 +12,20 @@ export default function HeroSection() {
   const [isClient, setIsClient] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Blog posts metadata (add new posts here)
+  const enableTerminalInput =
+    process.env.NEXT_PUBLIC_ENABLE_TERMINAL_INPUT !== "false";
+
   const blogPosts = [
     {
       title: "Hello World",
       slug: "hello-world",
       date: "2025-06-25",
     },
-    // Add more posts as needed
   ];
 
   const handleCommand = (cmd: string) => {
+    if (!enableTerminalInput) return;
+
     const trimmedCmd = cmd.trim().toLowerCase();
     setCommand("");
 
@@ -71,10 +74,10 @@ export default function HeroSection() {
   };
 
   useEffect(() => {
-    if (inputRef.current && !isMobile) {
+    if (inputRef.current && !isMobile && enableTerminalInput) {
       inputRef.current.focus();
     }
-  }, [currentView, isMobile]);
+  }, [currentView, isMobile, enableTerminalInput]);
 
   useEffect(() => {
     setIsClient(true);
@@ -89,7 +92,6 @@ export default function HeroSection() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Additional effect to ensure mobile detection is current
   useEffect(() => {
     if (isClient) {
       setIsMobile(window.innerWidth < 768);
@@ -369,80 +371,84 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Navigation hint */}
-            <div className="border-t border-gray-700 pt-3 sm:pt-4 mt-4 sm:mt-6">
-              {isClient && isMobile ? (
-                <div className="flex flex-wrap gap-1.5">
-                  {currentView !== "all" && (
+            {enableTerminalInput && (
+              <div className="border-t border-gray-700 pt-3 sm:pt-4 mt-4 sm:mt-6">
+                {isClient && isMobile ? (
+                  <div className="flex flex-wrap gap-1.5">
+                    {currentView !== "all" && (
+                      <button
+                        onClick={() => handleCommand("all")}
+                        className="px-2 py-1 bg-black border border-black text-white text-xs font-medium rounded hover:bg-gray-800 transition-colors"
+                      >
+                        home
+                      </button>
+                    )}
                     <button
-                      onClick={() => handleCommand("all")}
-                      className="px-2 py-1 bg-black border border-black text-white text-xs font-medium rounded hover:bg-gray-800 transition-colors"
+                      onClick={() => handleCommand("work")}
+                      className="px-2 py-1 bg-blue-100 border border-blue-600 text-blue-800 text-xs font-medium rounded hover:bg-blue-200 transition-colors"
                     >
-                      home
+                      work
                     </button>
-                  )}
-                  <button
-                    onClick={() => handleCommand("work")}
-                    className="px-2 py-1 bg-blue-100 border border-blue-600 text-blue-800 text-xs font-medium rounded hover:bg-blue-200 transition-colors"
-                  >
-                    work
-                  </button>
-                  <button
-                    onClick={() => handleCommand("projects")}
-                    className="px-2 py-1 bg-yellow-100 border border-yellow-600 text-yellow-800 text-xs font-medium rounded hover:bg-yellow-200 transition-colors"
-                  >
-                    projects
-                  </button>
-                  <button
-                    onClick={() => handleCommand("skills")}
-                    className="px-2 py-1 bg-green-100 border border-green-600 text-green-800 text-xs font-medium rounded hover:bg-green-200 transition-colors"
-                  >
-                    skills
-                  </button>
-                  <button
-                    onClick={() => handleCommand("contact")}
-                    className="px-2 py-1 bg-purple-100 border border-purple-600 text-purple-800 text-xs font-medium rounded hover:bg-purple-200 transition-colors"
-                  >
-                    contact
-                  </button>
-                  <button
-                    onClick={() => handleCommand("blogs")}
-                    className="px-2 py-1 bg-orange-100 border border-orange-600 text-orange-800 text-xs font-medium rounded hover:bg-orange-200 transition-colors"
-                  >
-                    blogs
-                  </button>
-                  {currentView !== "all" && (
                     <button
-                      onClick={() => handleCommand("clear")}
-                      className="px-2 py-1 bg-red-100 border border-red-600 text-red-800 text-xs font-medium rounded hover:bg-red-200 transition-colors"
+                      onClick={() => handleCommand("projects")}
+                      className="px-2 py-1 bg-yellow-100 border border-yellow-600 text-yellow-800 text-xs font-medium rounded hover:bg-yellow-200 transition-colors"
                     >
-                      clear
+                      projects
                     </button>
-                  )}
-                </div>
-              ) : (
-                <>
-                  <p className="text-gray-600 text-sm mb-2 font-medium">
-                    Try these commands for focused views:
-                  </p>
-                  <div className="text-gray-700 text-sm space-y-1">
-                    <p className="flex flex-wrap gap-2">
-                      <span className="text-blue-700 font-medium">work</span>|{" "}
-                      <span className="text-yellow-600 font-medium">
-                        projects
-                      </span>{" "}
-                      |{" "}
-                      <span className="text-green-700 font-medium">skills</span>{" "}
-                      |{" "}
-                      <span className="text-purple-700 font-medium">
-                        contact
-                      </span>{" "}
-                      | <span className="text-gray-700 font-medium">help</span>
-                    </p>
+                    <button
+                      onClick={() => handleCommand("skills")}
+                      className="px-2 py-1 bg-green-100 border border-green-600 text-green-800 text-xs font-medium rounded hover:bg-green-200 transition-colors"
+                    >
+                      skills
+                    </button>
+                    <button
+                      onClick={() => handleCommand("contact")}
+                      className="px-2 py-1 bg-purple-100 border border-purple-600 text-purple-800 text-xs font-medium rounded hover:bg-purple-200 transition-colors"
+                    >
+                      contact
+                    </button>
+                    <button
+                      onClick={() => handleCommand("blogs")}
+                      className="px-2 py-1 bg-orange-100 border border-orange-600 text-orange-800 text-xs font-medium rounded hover:bg-orange-200 transition-colors"
+                    >
+                      blogs
+                    </button>
+                    {currentView !== "all" && (
+                      <button
+                        onClick={() => handleCommand("clear")}
+                        className="px-2 py-1 bg-red-100 border border-red-600 text-red-800 text-xs font-medium rounded hover:bg-red-200 transition-colors"
+                      >
+                        clear
+                      </button>
+                    )}
                   </div>
-                </>
-              )}
-            </div>
+                ) : (
+                  <>
+                    <p className="text-gray-600 text-sm mb-2 font-medium">
+                      Try these commands for focused views:
+                    </p>
+                    <div className="text-gray-700 text-sm space-y-1">
+                      <p className="flex flex-wrap gap-2">
+                        <span className="text-blue-700 font-medium">work</span>|{" "}
+                        <span className="text-yellow-600 font-medium">
+                          projects
+                        </span>{" "}
+                        |{" "}
+                        <span className="text-green-700 font-medium">
+                          skills
+                        </span>{" "}
+                        |{" "}
+                        <span className="text-purple-700 font-medium">
+                          contact
+                        </span>{" "}
+                        |{" "}
+                        <span className="text-gray-700 font-medium">help</span>
+                      </p>
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
           </div>
         );
 
@@ -848,7 +854,6 @@ export default function HeroSection() {
               </span>
             </div>
 
-            {/* Social Media Icons */}
             <div className="flex items-center gap-1 sm:gap-3">
               <a
                 href="https://github.com/vid277"
@@ -912,77 +917,88 @@ export default function HeroSection() {
               </Link>
             </div>
           </div>
-          <div className="p-3 sm:p-6 min-h-[80vh] sm:min-h-[70vh] max-h-[85vh] sm:max-h-[80vh] flex flex-col bg-gray-100">
+          <div
+            className={`sm:p-6 min-h-[80vh] sm:min-h-[70vh] max-h-[85vh] sm:max-h-[80vh] flex flex-col bg-gray-100 ${
+              enableTerminalInput ? "p-3 sm:p-6" : "pb-0 p-3 sm:pb-0"
+            }`}
+          >
             <div className="flex-1 font-mono text-xs sm:text-sm mb-3 sm:mb-4 overflow-y-auto sm:scrollbar-thin sm:scrollbar-track-gray-200 sm:scrollbar-thumb-gray-400">
               {renderContent()}
             </div>
 
-            <div className="flex-shrink-0 mb-3 sm:mb-4">
-              <div className="font-mono text-xs sm:text-sm space-y-1 max-h-16 sm:max-h-24 overflow-y-auto sm:scrollbar-thin sm:scrollbar-track-gray-200 sm:scrollbar-thumb-gray-400">
-                {commandHistory.slice(-4).map((cmd, index) => (
-                  <p key={index} className="text-gray-700 text-xs break-words">
-                    {cmd}
-                  </p>
-                ))}
-              </div>
-            </div>
+            {enableTerminalInput && (
+              <>
+                <div className="flex-shrink-0 mb-3 sm:mb-4">
+                  <div className="font-mono text-xs sm:text-sm space-y-1 max-h-16 sm:max-h-24 overflow-y-auto sm:scrollbar-thin sm:scrollbar-track-gray-200 sm:scrollbar-thumb-gray-400">
+                    {commandHistory.slice(-4).map((cmd, index) => (
+                      <p
+                        key={index}
+                        className="text-gray-700 text-xs break-words"
+                      >
+                        {cmd}
+                      </p>
+                    ))}
+                  </div>
+                </div>
 
-            <div
-              className={`flex-shrink-0 flex items-center font-mono text-xs sm:text-sm border-t-2 border-black pt-3 sm:pt-4 bg-gray-100 ${
-                isClient && isMobile
-                  ? "bg-gray-200 rounded-b-lg px-2 py-2 cursor-pointer active:bg-gray-300"
-                  : ""
-              }`}
-              onClick={() => {
-                if (inputRef.current) {
-                  inputRef.current.focus();
-                  inputRef.current.click();
-                }
-              }}
-              onTouchStart={(e) => {
-                e.preventDefault();
-                if (inputRef.current) {
-                  inputRef.current.focus();
-                }
-              }}
-            >
-              <span className="text-green-700 mr-1 sm:mr-2 flex-shrink-0 text-xs sm:text-sm font-bold">
-                vidyoot@portfolio:~$
-              </span>
-              <input
-                ref={inputRef}
-                type="text"
-                value={command}
-                onChange={(e) => setCommand(e.target.value)}
-                onKeyDown={handleKeyPress}
-                onTouchStart={(e) => {
-                  e.stopPropagation();
-                  if (inputRef.current) {
-                    inputRef.current.focus();
-                  }
-                }}
-                onFocus={() => {
-                  if (inputRef.current) {
-                    inputRef.current.scrollIntoView({
-                      behavior: "smooth",
-                      block: "center",
-                    });
-                  }
-                }}
-                className="flex-1 bg-transparent text-gray-900 outline-none min-w-0 text-xs sm:text-sm touch-manipulation font-bold"
-                placeholder={
-                  isClient && isMobile
-                    ? "Tap here to type..."
-                    : "Type a command... (try 'help')"
-                }
-                autoFocus={false}
-                autoComplete="off"
-                autoCorrect="off"
-                autoCapitalize="none"
-                spellCheck="false"
-                inputMode="text"
-              />
-            </div>
+                <div
+                  className={`flex-shrink-0 flex items-center font-mono text-xs sm:text-sm border-t-2 border-black pt-3 sm:pt-4 bg-gray-100 ${
+                    isClient && isMobile
+                      ? "bg-gray-200 rounded-b-lg px-2 py-2 cursor-pointer active:bg-gray-300"
+                      : ""
+                  }`}
+                  onClick={() => {
+                    if (inputRef.current) {
+                      inputRef.current.focus();
+                      inputRef.current.click();
+                    }
+                  }}
+                  onTouchStart={(e) => {
+                    e.preventDefault();
+                    if (inputRef.current) {
+                      inputRef.current.focus();
+                    }
+                  }}
+                >
+                  <span className="text-green-700 mr-1 sm:mr-2 flex-shrink-0 text-xs sm:text-sm font-bold">
+                    vidyoot@portfolio:~$
+                  </span>
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    value={command}
+                    onChange={(e) => setCommand(e.target.value)}
+                    onKeyDown={handleKeyPress}
+                    onTouchStart={(e) => {
+                      e.stopPropagation();
+                      if (inputRef.current) {
+                        inputRef.current.focus();
+                      }
+                    }}
+                    onFocus={() => {
+                      if (inputRef.current) {
+                        inputRef.current.scrollIntoView({
+                          behavior: "smooth",
+                          block: "center",
+                        });
+                      }
+                    }}
+                    className="flex-1 bg-transparent text-gray-900 outline-none min-w-0 text-xs sm:text-sm touch-manipulation font-bold"
+                    placeholder={
+                      isClient && isMobile
+                        ? "Tap here to type..."
+                        : "Type a command... (try 'help')"
+                    }
+                    autoFocus={false}
+                    autoComplete="off"
+                    autoCorrect="off"
+                    autoCapitalize="none"
+                    spellCheck="false"
+                    inputMode="text"
+                  />
+                </div>
+              </>
+            )}
           </div>
         </motion.div>
       </div>
