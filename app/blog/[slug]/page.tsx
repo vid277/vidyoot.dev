@@ -3,14 +3,14 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 
 interface Params {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
   const posts = getAllPostsMeta();
-  return posts.map((post) => ({ slug: post.slug }));
+  return Promise.resolve(posts.map((post) => ({ slug: post.slug })));
 }
 
 export default async function BlogPostPage({ params }: Params) {
