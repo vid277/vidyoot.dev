@@ -155,9 +155,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 async function generateStaticParams() {
     const posts = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$blog$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getAllPostsMeta"])();
-    return posts.map((post)=>({
+    return Promise.resolve(posts.map((post)=>({
             slug: post.slug
-        }));
+        })));
 }
 async function BlogPostPage({ params }) {
     const { slug } = await params;

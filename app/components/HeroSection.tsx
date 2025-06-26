@@ -21,6 +21,11 @@ export default function HeroSection() {
       slug: "hello-world",
       date: "2025-06-25",
     },
+    {
+      title: "The Paradoxical Nature of Jealousy",
+      slug: "the-paradoxical-nature-of-jealousy",
+      date: "2025-06-25",
+    },
   ];
 
   const handleCommand = (cmd: string) => {

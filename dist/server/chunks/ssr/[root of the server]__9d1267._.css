@@ -468,6 +468,10 @@ img, video {
   height: .75rem;
 }
 
+.h-\[100dvh\] {
+  height: 100dvh;
+}
+
 .max-h-16 {
   max-height: 4rem;
 }
@@ -829,6 +833,10 @@ img, video {
   padding-bottom: .5rem;
 }
 
+.pb-0 {
+  padding-bottom: 0;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -843,14 +851,6 @@ img, video {
 
 .pt-8 {
   padding-top: 2rem;
-}
-
-.pt-0 {
-  padding-top: 0;
-}
-
-.pb-0 {
-  padding-bottom: 0;
 }
 
 .font-mono {
@@ -1426,12 +1426,12 @@ body {
     padding: 1.5rem;
   }
 
-  .sm\:pt-4 {
-    padding-top: 1rem;
-  }
-
   .sm\:pb-0 {
     padding-bottom: 0;
+  }
+
+  .sm\:pt-4 {
+    padding-top: 1rem;
   }
 
   .sm\:text-2xl {
