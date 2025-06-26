@@ -10,7 +10,7 @@ runtime.loadChunk("server/chunks/ssr/node_modules_next_dist_client_components_fo
 runtime.loadChunk("server/chunks/ssr/node_modules_next_dist_client_components_unauthorized-error_d758e6.js");
 runtime.loadChunk("server/chunks/ssr/node_modules_esprima_dist_esprima_84ce61.js");
 runtime.loadChunk("server/chunks/ssr/node_modules_micromark-core-commonmark_dev_lib_db118e._.js");
-runtime.loadChunk("server/chunks/ssr/node_modules_next_dist_38edab._.js");
+runtime.loadChunk("server/chunks/ssr/node_modules_next_dist_ba9487._.js");
 runtime.loadChunk("server/chunks/ssr/node_modules_5772a9._.js");
 runtime.loadChunk("server/chunks/ssr/[root of the server]__7556c4._.js");
 runtime.getOrInstantiateRuntimeModule("[project]/.next-internal/server/app/blog/[slug]/page/actions.js [app-rsc] (ecmascript)", CHUNK_PUBLIC_PATH);

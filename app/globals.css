@@ -38,3 +38,144 @@ body {
 .scrollbar-thumb-gray-600::-webkit-scrollbar-thumb:hover {
   background: #6b7280;
 }
+
+/* Neo-brutalist prose styles */
+.prose {
+  color: #374151;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas,
+    "Liberation Mono", Menlo, monospace;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: #111827;
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose h1 {
+  font-size: 1.5em;
+  border-bottom: 2px solid #000;
+  padding-bottom: 0.25em;
+}
+
+.prose h2 {
+  font-size: 1.25em;
+  border-bottom: 1px solid #000;
+  padding-bottom: 0.25em;
+}
+
+.prose h3 {
+  font-size: 1.125em;
+}
+
+.prose p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+.prose a {
+  color: #2563eb;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.prose a:hover {
+  color: #1d4ed8;
+}
+
+.prose strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+.prose em {
+  color: #374151;
+  font-style: italic;
+}
+
+.prose code {
+  color: #dc2626;
+  background-color: #f3f4f6;
+  padding: 0.125em 0.25em;
+  border-radius: 0.25em;
+  font-size: 0.875em;
+  font-weight: 600;
+  border: 1px solid #d1d5db;
+}
+
+.prose pre {
+  background-color: #f3f4f6;
+  border: 2px solid #000;
+  border-radius: 0.375em;
+  padding: 1em;
+  overflow-x: auto;
+  margin: 1em 0;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  color: #374151;
+}
+
+.prose blockquote {
+  border-left: 4px solid #000;
+  padding-left: 1em;
+  margin: 1em 0;
+  font-style: italic;
+  background-color: #f9fafb;
+  padding: 1em;
+  border: 1px solid #d1d5db;
+}
+
+.prose ul,
+.prose ol {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+.prose li {
+  margin: 0.25em 0;
+}
+
+.prose ul li::marker {
+  color: #000;
+  font-weight: bold;
+}
+
+.prose ol li::marker {
+  color: #000;
+  font-weight: bold;
+}
+
+.prose hr {
+  border: 2px solid #000;
+  margin: 2em 0;
+}
+
+.prose table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  border: 2px solid #000;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid #000;
+  padding: 0.5em;
+  text-align: left;
+}
+
+.prose th {
+  background-color: #f3f4f6;
+  font-weight: 700;
+}
