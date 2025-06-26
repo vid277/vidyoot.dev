@@ -13,7 +13,7 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogPostPage({ params }: Params) {
-  const { slug } = params;
+  const { slug } = await params;
   try {
     const { meta, contentHtml } = await getPostContent(slug);
     return (
