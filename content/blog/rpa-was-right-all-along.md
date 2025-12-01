@@ -86,8 +86,6 @@ Now “only” 2% of runs fail. That still means 20,000 broken cases per million
 
 That’s not “good enough.” We’ve chosen the least predictable, most expensive mechanism for the part of the work that is most amenable to being turned into a program.
 
-You don’t need a coworker for the 95%. You need a compiler.
-    
 ## Boring already works
 We already have a thing that clicks through UIs in deterministic ways: **RPA (UiPath, BluePrism, etc.)**.
 
@@ -141,11 +139,11 @@ Once you view the future of agentic coworkers as compilers, the enterprise appli
 - add invariants and assertions
 - and most importantly, know exactly what will run in production
 
-## Guardrails are trivial in code, but not with agents.
+## Guardrails are trivial in code, but not with agents
 
 This is where our compiler model really earns its keep.
 
-Let’s take another fairly simple, common: automating invoice approvals.
+Let’s look at another fairly simple task of automating invoice approvals.
 
 You want the invariant:
 > “If the amount changes after the user approves, abort.”
