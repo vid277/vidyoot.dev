@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import "katex/dist/katex.min.css";
 import "highlight.js/styles/atom-one-dark.css";
+import { Metadata } from "next";
 
 interface Params {
   params: Promise<{
@@ -13,6 +14,41 @@ interface Params {
 export async function generateStaticParams() {
   const posts = getAllPostsMeta();
   return Promise.resolve(posts.map((post) => ({ slug: post.slug })));
+}
+
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const { slug } = await params;
+  try {
+    const { meta } = await getPostContent(slug);
+    const description = meta.summary || "A blog post by Vidyoot Senthil";
+    const url = `https://vidyoot.dev/blog/${slug}/`;
+
+    return {
+      title: meta.title,
+      description: description,
+      openGraph: {
+        title: meta.title,
+        description: description,
+        url: url,
+        siteName: "vidyoot.dev",
+        locale: "en_US",
+        type: "article",
+        publishedTime: meta.date,
+        authors: ["Vidyoot Senthil"],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: meta.title,
+        description: description,
+        creator: "@vidyoot",
+      },
+    };
+  } catch (error) {
+    return {
+      title: "Blog Post Not Found",
+      description: "The requested blog post could not be found.",
+    };
+  }
 }
 
 export default async function BlogPostPage({ params }: Params) {

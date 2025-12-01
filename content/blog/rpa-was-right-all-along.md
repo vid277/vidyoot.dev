@@ -2,7 +2,7 @@
 title: "Your AI Coworker Should Be Boring (RPA Was Right All Along)"
 slug: "rpa-was-right-all-along"
 date: "2025-11-30"
-summary: "Why the future of AI automation isn't autonomous agents, but deterministic workflows compiled from screen recordings."
+summary: "Why the future of AI automation isn't computer-use agents, but RPA workflows compiled from screen recordings."
 ---
 I’ve been trying to use the Comet agent almost every day.
 
