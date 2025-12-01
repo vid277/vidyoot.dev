@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
         creator: "@vidyoot",
       },
     };
-  } catch (error) {
+  } catch {
     return {
       title: "Blog Post Not Found",
       description: "The requested blog post could not be found.",
