@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "^2.31.3",
+    "@amplitude/plugin-session-replay-browser": "^1.23.6",
     "framer-motion": "^12.0.6",
     "gray-matter": "^4.0.3",
     "next": "15.1.6",
