@@ -42,14 +42,14 @@ export default async function BlogPage() {
               </div>
 
               <div className="flex-1">
-                <p className="text-green-700 font-bold mb-3 text-sm">
+                <p className="text-green-700 font-bold mb-6 text-sm">
                   $ cat posts.txt
                 </p>
                 <div className="space-y-4">
                   {posts.map((post) => (
                     <div
                       key={post.slug}
-                      className="border-b-2 border-black pb-4 last:border-b-0"
+                      className="pb-4"
                     >
                       <Link
                         href={`/blog/${post.slug}`}

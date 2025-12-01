@@ -46,6 +46,12 @@ body {
     "Liberation Mono", Menlo, monospace;
 }
 
+.prose p {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.7;
+  font-size: 1.125em;
+}
+
 .prose h1,
 .prose h2,
 .prose h3,
@@ -54,29 +60,30 @@ body {
 .prose h6 {
   color: #111827;
   font-weight: 700;
-  margin-top: 1.5em;
+  margin-top: 2rem;
   margin-bottom: 0.5em;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas,
+    "Liberation Mono", Menlo, monospace;
 }
 
 .prose h1 {
-  font-size: 1.5em;
-  border-bottom: 2px solid #000;
-  padding-bottom: 0.25em;
+  font-size: 1.75em;
+  border-bottom: 3px solid #e5e7eb;
+  padding-bottom: 0.3em;
 }
 
 .prose h2 {
-  font-size: 1.25em;
-  border-bottom: 1px solid #000;
-  padding-bottom: 0.25em;
+  font-size: 1.5em;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.3em;
 }
 
 .prose h3 {
-  font-size: 1.125em;
+  font-size: 1.25em;
 }
 
 .prose p {
-  margin-bottom: 1em;
-  line-height: 1.6;
+  margin-bottom: 0.75em;
 }
 
 .prose a {
@@ -107,23 +114,30 @@ body {
   font-size: 0.875em;
   font-weight: 600;
   border: 1px solid #d1d5db;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 .prose pre {
-  background-color: #f3f4f6;
-  border: 2px solid #000;
-  border-radius: 0.375em;
+  background-color: #282c34;
+  border: none;
+  border-radius: 0.5em;
   padding: 1em;
   overflow-x: auto;
   margin: 1em 0;
-  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 1);
+  box-shadow: none;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.95em;
+  font-weight: 500;
 }
 
 .prose pre code {
   background-color: transparent;
   padding: 0;
   border: none;
-  color: #374151;
+  color: #abb2bf;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
 }
 
 .prose blockquote {
@@ -132,18 +146,43 @@ body {
   margin: 1em 0;
   font-style: italic;
   background-color: #f9fafb;
-  padding: 1em;
+  padding: 0.75em 1em;
   border: 1px solid #d1d5db;
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+.prose blockquote p:last-child {
+  margin-bottom: 0;
 }
 
 .prose ul,
 .prose ol {
   margin: 1em 0;
   padding-left: 1.5em;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.7;
+  font-size: 1.125em;
+}
+
+.prose p + ul,
+.prose p + ol {
+  margin-top: 0.25em;
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
 }
 
 .prose li {
   margin: 0.25em 0;
+  display: list-item;
 }
 
 .prose ul li::marker {
@@ -178,4 +217,19 @@ body {
 .prose th {
   background-color: #f3f4f6;
   font-weight: 700;
+}
+
+/* KaTeX styling */
+.prose .katex {
+  font-size: 1em;
+}
+
+.prose .katex-display {
+  margin: 1em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.prose .katex-display > .katex {
+  text-align: center;
 }

@@ -1,6 +1,8 @@
 import { getPostContent, getAllPostsMeta } from "../../../lib/blog";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import "katex/dist/katex.min.css";
+import "highlight.js/styles/atom-one-dark.css";
 
 interface Params {
   params: Promise<{
@@ -65,7 +67,7 @@ export default async function BlogPostPage({ params }: Params) {
 
                 <div className="flex-1">
                   <div
-                    className="prose-sm sm:prose-base max-w-none text-black space-y-4 prose"
+                    className="prose max-w-none text-black"
                     dangerouslySetInnerHTML={{ __html: contentHtml }}
                   />
                 </div>
