@@ -45,6 +45,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Vidyoot Senthil" }],
   creator: "Vidyoot Senthil",
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-16.png", sizes: "16x16", type: "image/png" },
+    ],
+  },
   openGraph: {
     title: "vidyoot.dev",
     description:
