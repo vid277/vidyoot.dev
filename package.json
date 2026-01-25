@@ -1,42 +1,19 @@
 {
-  "name": "backend-portfolio-template",
-  "version": "0.1.0",
+  "name": "vidyoot-dev",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "node build.js",
-    "build:next": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "node build.js"
   },
   "dependencies": {
-    "@amplitude/analytics-browser": "^2.31.3",
-    "@amplitude/plugin-session-replay-browser": "^1.23.6",
-    "framer-motion": "^12.0.6",
     "gray-matter": "^4.0.3",
-    "next": "15.1.6",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
     "rehype-highlight": "^7.0.2",
     "rehype-katex": "^7.0.1",
     "rehype-stringify": "^10.0.1",
-    "remark": "^14.0.2",
-    "remark-html": "^15.0.1",
     "remark-math": "^6.0.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
     "unified": "^11.0.5"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.6",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
   }
 }

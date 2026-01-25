@@ -1,8 +1,2 @@
-.next
-.env
-/node_modules/
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-/dist/
+node_modules/
+.DS_Store
