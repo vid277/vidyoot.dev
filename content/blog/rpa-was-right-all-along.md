@@ -119,7 +119,7 @@ That’s where the “compiler” mental model comes in.
 Let's redraw the workflow.
 
 Agents as co-workers today:
-![image](https://hackmd.io/_uploads/rk6RHYcWZx.png)
+![Agent as coworker diagram](/images/blog/agent-coworker-diagram.png)
 
 But in my head, the ideal pipeline would look something like this:     
 1. A human sits down at a VM and does the task the way they normally would
@@ -128,7 +128,7 @@ But in my head, the ideal pipeline would look something like this:
 4. A boring worker runs that code on a schedule or via API.
 5. When the workflow breaks (UI change, new field), a small agent proposes a patch.
 
-![image](https://hackmd.io/_uploads/HJC3NF5WZl.png)
+![Compiler workflow diagram](/images/blog/compiler-workflow-diagram.png)
 
 This allows the deterministic workflows to own the 95% and AI agents to carry the unexpected 5%.
 

@@ -2,9 +2,11 @@
   "name": "backend-portfolio-template",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "node build.js",
+    "build:next": "next build",
     "start": "next start",
     "lint": "next lint"
   },
